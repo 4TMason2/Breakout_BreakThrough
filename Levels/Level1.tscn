@@ -111,3 +111,4 @@ __meta__ = {
 shape = SubResource( 4 )
 
 [connection signal="body_entered" from="DeathBox" to="Slider" method="_on_DeathBox_body_entered"]
+[connection signal="body_entered" from="DeathBox" to="Ball" method="_on_DeathBox_body_entered"]

@@ -11,8 +11,12 @@ config_version=4
 [application]
 
 config/name="Breakout"
-run/main_scene="res://Levels/Level1.tscn"
+run/main_scene="res://User Interfaces/StartMenu.tscn"
 config/icon="res://icon.png"
+
+[global]
+
+main=false
 
 [gui]
 
