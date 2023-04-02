@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/HardBreakout.mp3-0b5f8cb65fdf12883906119c28e7a425.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/HardBreakout.mp3"
+dest_files=[ "res://.import/HardBreakout.mp3-0b5f8cb65fdf12883906119c28e7a425.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

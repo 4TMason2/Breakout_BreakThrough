@@ -4,7 +4,6 @@ const BALL_SPEED = 500
 
 var ball_vel = Vector2(0, BALL_SPEED)
 var prev_ball_vel = ball_vel
-var lives = 3
 var start_pos
 var is_paused = false
 var pause_time = 2.0
@@ -32,9 +31,9 @@ func _process(delta):
 		
 	# Ball is off screen
 	if position.y > get_viewport_rect().size.y:
-		lives = lives - 1
+		Global.lose_life()
 		
-		if lives <= 0:
+		if Global.lives <= 0:
 			end_game()
 			queue_free()
 		else:
