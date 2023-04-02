@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/EasyBreakout.mp3-f5456925300232d6627131fc2a8e1d8f.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/EasyBreakout.mp3"
+dest_files=[ "res://.import/EasyBreakout.mp3-f5456925300232d6627131fc2a8e1d8f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
