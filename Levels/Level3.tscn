@@ -1,0 +1,193 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Objects/Ball.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/Wall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Slider.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/3hitBrick.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/TopWall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Levels/HUD.gd" type="Script" id=6]
+[ext_resource path="res://Assets/Sprites/ball.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/BallEmpty.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Fonts/NotoSansAvestan-Regular.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://Assets/Music/HardBreakout.mp3" type="AudioStream" id=10]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.454902 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 9 )
+
+[node name="Level3" type="Node2D"]
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="TopWalls" type="Node2D" parent="Walls"]
+
+[node name="TopWall" parent="Walls/TopWalls" instance=ExtResource( 5 )]
+position = Vector2( 64, 16 )
+
+[node name="TopWall2" parent="Walls/TopWalls" instance=ExtResource( 5 )]
+position = Vector2( 192, 16 )
+
+[node name="TopWall3" parent="Walls/TopWalls" instance=ExtResource( 5 )]
+position = Vector2( 320, 16 )
+
+[node name="TopWall4" parent="Walls/TopWalls" instance=ExtResource( 5 )]
+position = Vector2( 448, 16 )
+
+[node name="TopWall5" parent="Walls/TopWalls" instance=ExtResource( 5 )]
+position = Vector2( 576, 16 )
+
+[node name="TopWall6" parent="Walls/TopWalls" instance=ExtResource( 5 )]
+position = Vector2( 704, 16 )
+
+[node name="TopWall7" parent="Walls/TopWalls" instance=ExtResource( 5 )]
+position = Vector2( 832, 16 )
+
+[node name="TopWall8" parent="Walls/TopWalls" instance=ExtResource( 5 )]
+position = Vector2( 960, 16 )
+
+[node name="LeftWalls" type="Node2D" parent="Walls"]
+
+[node name="Wall" parent="Walls/LeftWalls" instance=ExtResource( 2 )]
+position = Vector2( 16, 96 )
+
+[node name="Wall2" parent="Walls/LeftWalls" instance=ExtResource( 2 )]
+position = Vector2( 16, 224 )
+
+[node name="Wall3" parent="Walls/LeftWalls" instance=ExtResource( 2 )]
+position = Vector2( 16, 352 )
+
+[node name="Wall4" parent="Walls/LeftWalls" instance=ExtResource( 2 )]
+position = Vector2( 16, 480 )
+
+[node name="Wall5" parent="Walls/LeftWalls" instance=ExtResource( 2 )]
+position = Vector2( 16, 608 )
+
+[node name="RightWalls" type="Node2D" parent="Walls"]
+
+[node name="Wall6" parent="Walls/RightWalls" instance=ExtResource( 2 )]
+position = Vector2( 1008, 96 )
+
+[node name="Wall7" parent="Walls/RightWalls" instance=ExtResource( 2 )]
+position = Vector2( 1008, 224 )
+
+[node name="Wall8" parent="Walls/RightWalls" instance=ExtResource( 2 )]
+position = Vector2( 1008, 352 )
+
+[node name="Wall9" parent="Walls/RightWalls" instance=ExtResource( 2 )]
+position = Vector2( 1008, 480 )
+
+[node name="Wall10" parent="Walls/RightWalls" instance=ExtResource( 2 )]
+position = Vector2( 1008, 608 )
+
+[node name="Bricks" type="Node2D" parent="."]
+
+[node name="3HitBrick" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 128, 80 )
+
+[node name="3HitBrick2" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 128, 144 )
+
+[node name="3HitBrick3" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 224, 80 )
+
+[node name="3HitBrick4" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 224, 144 )
+
+[node name="3HitBrick5" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 320, 80 )
+
+[node name="3HitBrick6" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 320, 144 )
+
+[node name="3HitBrick7" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 416, 80 )
+
+[node name="3HitBrick8" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 416, 144 )
+
+[node name="3HitBrick9" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 512, 80 )
+
+[node name="3HitBrick10" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 512, 144 )
+
+[node name="3HitBrick11" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 608, 80 )
+
+[node name="3HitBrick12" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 608, 144 )
+
+[node name="3HitBrick13" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 704, 80 )
+
+[node name="3HitBrick14" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 704, 144 )
+
+[node name="3HitBrick15" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 800, 80 )
+
+[node name="3HitBrick16" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 800, 144 )
+
+[node name="3HitBrick17" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 896, 80 )
+
+[node name="3HitBrick18" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 896, 144 )
+
+[node name="Slider" parent="." instance=ExtResource( 3 )]
+position = Vector2( 512, 496 )
+
+[node name="Ball" parent="." instance=ExtResource( 1 )]
+position = Vector2( 512, 256 )
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource( 6 )
+
+[node name="Panel" type="Panel" parent="HUD"]
+margin_left = 19.0
+margin_top = 23.0
+margin_right = 208.0
+margin_bottom = 79.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Label" type="Label" parent="HUD"]
+margin_left = 26.0
+margin_top = 27.0
+margin_right = 100.0
+margin_bottom = 120.0
+custom_fonts/font = SubResource( 2 )
+text = "Lives: 
+"
+
+[node name="BallFull" type="TextureRect" parent="HUD"]
+margin_left = 114.0
+margin_top = 41.0
+margin_right = 301.0
+margin_bottom = 105.0
+rect_scale = Vector2( 0.406, 0.404 )
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 2
+
+[node name="BallEmpty" type="TextureRect" parent="HUD"]
+margin_left = 114.0
+margin_top = 41.0
+margin_right = 301.0
+margin_bottom = 105.0
+rect_scale = Vector2( 0.406, 0.404 )
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -20.0
+autoplay = true
