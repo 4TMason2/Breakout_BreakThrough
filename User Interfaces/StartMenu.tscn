@@ -49,5 +49,5 @@ volume_db = -20.0
 autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
-[connection signal="pressed" from="VBoxContainer/ShopButton" to="." method="_on_OptionsButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/ShopButton" to="." method="_on_ShopButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]

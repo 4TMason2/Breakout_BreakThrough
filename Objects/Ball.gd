@@ -13,8 +13,8 @@ var pause_timer = 0.0
 func _ready():
 	start_pos = position
 	# Makes it go in a random direction
-	# ball_vel = Vector2(rand_range(-1,1),rand_range(-1,1)).normalized() * BALL_SPEED
-	ball_vel = Vector2(0,BALL_SPEED)
+	ball_vel = Vector2(rand_range(-1,1),rand_range(-1,1)).normalized() * BALL_SPEED
+	#ball_vel = Vector2(0,BALL_SPEED)
 
 
 func _process(delta):

@@ -2,6 +2,7 @@ extends Node
 
 var max_lives = 3
 var current_level = 1
+var final_level = 4
 var lives = max_lives
 var hud # Pointer to the HUD
 var num_bricks = 0
@@ -10,8 +11,6 @@ signal level_loaded
 
 func _ready():
 	connect("start_game",self,"load_level")
-	
-	
 
 func count_bricks():
 	num_bricks = 0
@@ -21,7 +20,7 @@ func count_bricks():
 		bricks.append(brick)
 		num_bricks += 1
 	print(num_bricks," counted")
-	print(bricks)
+
 
 
 func load_level(level_num):
@@ -36,7 +35,14 @@ func brick_break():
 	print(num_bricks)
 	if num_bricks == 0:
 		current_level += 1
-		load_level(current_level)
+		if current_level == final_level:
+			win_game()
+		else:
+			load_level(current_level)
+
+
+func win_game():
+	get_tree().change_scene("res://User Interfaces/WinScreen.tscn")
 
 func lose_life():
 	lives -= 1
