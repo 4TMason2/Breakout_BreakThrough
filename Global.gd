@@ -6,9 +6,11 @@ var lives = max_lives
 var hud # Pointer to the HUD
 var num_bricks = 0
 var bricks = []
+signal level_loaded
 
 func _ready():
 	connect("start_game",self,"load_level")
+	
 	
 
 func count_bricks():
@@ -19,13 +21,15 @@ func count_bricks():
 		bricks.append(brick)
 		num_bricks += 1
 	print(num_bricks," counted")
+	print(bricks)
 
 
 func load_level(level_num):
 	var level_path = "res://Levels/Level" + str(level_num) + ".tscn"
+	Global.lives = Global.max_lives
 	print("Loading level: ", level_path)
 	get_tree().change_scene(level_path)
-	count_bricks()
+	call_deferred("count_bricks")
 
 func brick_break():
 	num_bricks -= 1

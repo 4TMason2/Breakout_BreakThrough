@@ -93,6 +93,7 @@ position = Vector2( 128, 80 )
 
 [node name="3HitBrick2" parent="Bricks" instance=ExtResource( 4 )]
 position = Vector2( 128, 144 )
+rotation = -3.14159
 
 [node name="3HitBrick3" parent="Bricks" instance=ExtResource( 4 )]
 position = Vector2( 224, 80 )

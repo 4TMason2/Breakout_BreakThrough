@@ -138,47 +138,47 @@ position = Vector2( 896, 0 )
 
 [node name="Bricks" type="Node2D" parent="."]
 
-[node name="Brick5" parent="Bricks" instance=ExtResource( 4 )]
-position = Vector2( 128, 112 )
-
-[node name="Brick6" parent="Bricks" instance=ExtResource( 4 )]
+[node name="Brick" parent="Bricks" instance=ExtResource( 4 )]
 position = Vector2( 256, 112 )
 
-[node name="Brick7" parent="Bricks" instance=ExtResource( 4 )]
-position = Vector2( 384, 112 )
+[node name="Brick2" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 128, 112 )
 
-[node name="Brick8" parent="Bricks" instance=ExtResource( 4 )]
+[node name="Brick3" parent="Bricks" instance=ExtResource( 4 )]
 position = Vector2( 512, 112 )
 
-[node name="Brick9" parent="Bricks" instance=ExtResource( 4 )]
-position = Vector2( 640, 112 )
+[node name="Brick4" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 384, 112 )
 
-[node name="Brick10" parent="Bricks" instance=ExtResource( 4 )]
+[node name="Brick5" parent="Bricks" instance=ExtResource( 4 )]
 position = Vector2( 768, 112 )
 
-[node name="Brick11" parent="Bricks" instance=ExtResource( 4 )]
+[node name="Brick6" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 640, 112 )
+
+[node name="Brick8" parent="Bricks" instance=ExtResource( 4 )]
 position = Vector2( 896, 112 )
 
+[node name="Brick7" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 256, 200 )
+
+[node name="Brick9" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 128, 200 )
+
+[node name="Brick10" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 512, 200 )
+
+[node name="Brick11" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 384, 200 )
+
 [node name="Brick12" parent="Bricks" instance=ExtResource( 4 )]
-position = Vector2( 128, 208 )
+position = Vector2( 768, 200 )
 
 [node name="Brick13" parent="Bricks" instance=ExtResource( 4 )]
-position = Vector2( 256, 208 )
+position = Vector2( 640, 200 )
 
 [node name="Brick14" parent="Bricks" instance=ExtResource( 4 )]
-position = Vector2( 384, 208 )
-
-[node name="Brick15" parent="Bricks" instance=ExtResource( 4 )]
-position = Vector2( 512, 208 )
-
-[node name="Brick16" parent="Bricks" instance=ExtResource( 4 )]
-position = Vector2( 640, 208 )
-
-[node name="Brick17" parent="Bricks" instance=ExtResource( 4 )]
-position = Vector2( 768, 208 )
-
-[node name="Brick18" parent="Bricks" instance=ExtResource( 4 )]
-position = Vector2( 896, 208 )
+position = Vector2( 896, 200 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
