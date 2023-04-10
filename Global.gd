@@ -6,12 +6,11 @@ var lives = max_lives
 var hud # Pointer to the HUD
 var num_bricks = 0
 var bricks = []
+
 signal level_loaded
 
 func _ready():
-	connect("start_game",self,"load_level")
-	
-	
+	connect("start_game", self, "load_level")
 
 func count_bricks():
 	num_bricks = 0
@@ -43,8 +42,6 @@ func lose_life():
 	hud.load_hearts()
 	if lives <= 0:
 		get_tree().change_scene("res://User Interfaces/GameOver.tscn")
-
-
-
-
-
+		
+func get_num_bricks():
+	return num_bricks
