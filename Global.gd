@@ -25,7 +25,7 @@ func count_bricks():
 
 func load_level(level_num):
 	var level_path = "res://Levels/Level" + str(level_num) + ".tscn"
-	Global.lives = Global.max_lives
+	lives = max_lives
 	print("Loading level: ", level_path)
 	get_tree().change_scene(level_path)
 	call_deferred("count_bricks")
