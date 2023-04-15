@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/Fonts/Monocraft.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://User Interfaces/GameOver.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Music/Project 37b.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Music/lose.mp3" type="AudioStream" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 125

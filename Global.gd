@@ -27,6 +27,10 @@ func load_level(level_num):
 	var level_path = "res://Levels/Level" + str(level_num) + ".tscn"
 	Global.lives = Global.max_lives
 	print("Loading level: ", level_path)
+	
+	for node in get_tree().get_nodes_in_group("Powerups"):
+		node.queue_free()
+	
 	get_tree().change_scene(level_path)
 	call_deferred("count_bricks")
 
@@ -49,6 +53,11 @@ func lose_life():
 	hud.load_hearts()
 	if lives <= 0:
 		get_tree().change_scene("res://User Interfaces/GameOver.tscn")
+		
+func add_life():
+	if lives < max_lives:
+		lives += 1
+		hud.load_hearts()
 
 
 

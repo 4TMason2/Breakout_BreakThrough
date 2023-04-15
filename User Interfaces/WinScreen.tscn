@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Fonts/Monocraft.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://User Interfaces/WinScreen.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Music/Winscreen.mp3" type="AudioStream" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 125
@@ -41,5 +42,10 @@ margin_bottom = 464.0
 custom_fonts/font = SubResource( 2 )
 text = "Main Menu"
 flat = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -20.0
+autoplay = true
 
 [connection signal="pressed" from="MainMenu" to="." method="_on_MainMenu_pressed"]
