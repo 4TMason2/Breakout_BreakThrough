@@ -14,7 +14,7 @@ func _ready():
 	start_pos = position
 	# Makes it go in a random direction
 	# ball_vel = Vector2(rand_range(-1,1),rand_range(-1,1)).normalized() * BALL_SPEED
-	ball_vel = Vector2(0,BALL_SPEED)
+	ball_vel = Vector2(0, BALL_SPEED)
 
 
 func _process(delta):
@@ -31,7 +31,7 @@ func _process(delta):
 			ball_vel = prev_ball_vel
 		
 	# Ball is off screen
-	if position.y > get_viewport_rect().size.y:
+	if position.y > get_viewport_rect().size.y or position.x > get_viewport_rect().size.x or position.x < 0:
 		Global.lose_life()
 		
 		if Global.lives <= 0:

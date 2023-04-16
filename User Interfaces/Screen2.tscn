@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://User Interfaces/Screen2.gd" type="Script" id=1]
+
+[node name="Screen2" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -176.0
+margin_top = -108.0
+margin_right = 91.0
+margin_bottom = 43.0
+
+[node name="SingleButton" type="Button" parent="VBoxContainer"]
+margin_right = 267.0
+margin_bottom = 20.0
+focus_neighbour_top = NodePath("../BackButton")
+text = "Singleplayer"
+
+[node name="MultiButton" type="Button" parent="VBoxContainer"]
+margin_top = 24.0
+margin_right = 267.0
+margin_bottom = 44.0
+text = "Multiplayer"
+
+[node name="BackButton" type="Button" parent="VBoxContainer"]
+margin_top = 48.0
+margin_right = 267.0
+margin_bottom = 68.0
+focus_neighbour_bottom = NodePath("../SingleButton")
+text = "Back"
+
+[connection signal="pressed" from="VBoxContainer/SingleButton" to="." method="_on_SingleButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/MultiButton" to="." method="_on_MultiButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_BackButton_pressed"]
