@@ -32,6 +32,7 @@ func hit():
 		
 		emit_signal("brick_destroyed")
 		queue_free()
+		Global.score += 25
 		Global.brick_break()
 	else:
 		set_texture(firstHitSprite)

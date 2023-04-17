@@ -31,6 +31,6 @@ func hit():
 				get_tree().get_root().add_child(clone_powerup)
 				clone_powerup.global_position = global_position
 	
-		
+		Global.score += 50
 		Global.brick_break()
 		queue_free()
