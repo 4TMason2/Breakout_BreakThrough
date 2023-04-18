@@ -1,5 +1,102 @@
-[gd_scene format=2]
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Fonts/Monocraft.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Sprites/transparentBall.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/redBall.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/camoBall.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/Ballter_White.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 125
+outline_size = 6
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 36
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 619, 79 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_left = -0.00292969
+anchor_right = -0.00292969
+margin_left = 2.0
+margin_top = 1.0
+margin_right = 1026.0
+margin_bottom = 601.0
+rect_pivot_offset = Vector2( 193, 378 )
+color = Color( 0.941176, 0.862745, 0.862745, 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="TransparentBall" type="Sprite" parent="."]
+position = Vector2( 157, 303.5 )
+scale = Vector2( 2.20968, 2.08065 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 370.0
+margin_top = 16.0
+margin_right = 1117.0
+margin_bottom = 176.0
+custom_fonts/font = SubResource( 1 )
+text = "SHOP"
+
+[node name="PurchaseButton" type="Button" parent="."]
+margin_left = 49.0
+margin_top = 373.5
+margin_right = 253.0
+margin_bottom = 415.5
+rect_pivot_offset = Vector2( 114, 48 )
+custom_fonts/font = SubResource( 2 )
+text = "Purchase"
+flat = true
+
+[node name="RedBall" type="Sprite" parent="."]
+position = Vector2( 399, 302.5 )
+scale = Vector2( 2.22581, 2.03226 )
+texture = ExtResource( 3 )
+
+[node name="PurchaseButton2" type="Button" parent="."]
+margin_left = 294.0
+margin_top = 376.5
+margin_right = 498.0
+margin_bottom = 418.5
+custom_fonts/font = SubResource( 2 )
+text = "Purchase"
+flat = true
+
+[node name="BallterWhite" type="Sprite" parent="."]
+position = Vector2( 854, 316 )
+scale = Vector2( 0.064756, 0.0584487 )
+texture = ExtResource( 5 )
+
+[node name="CamoBall" type="Sprite" parent="."]
+position = Vector2( 632, 309 )
+scale = Vector2( 2.16935, 1.96774 )
+texture = ExtResource( 4 )
+
+[node name="PurchaseButton3" type="Button" parent="."]
+margin_left = 521.0
+margin_top = 378.0
+margin_right = 725.0
+margin_bottom = 420.0
+custom_fonts/font = SubResource( 2 )
+text = "Purchase"
+flat = true
+
+[node name="PurchaseButton4" type="Button" parent="."]
+margin_left = 754.0
+margin_top = 382.0
+margin_right = 958.0
+margin_bottom = 424.0
+custom_fonts/font = SubResource( 2 )
+text = "Purchase"
+flat = true
