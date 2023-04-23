@@ -10,6 +10,9 @@
 
 [node name="Level1" type="Node2D"]
 
+[node name="GUI" parent="." instance=ExtResource( 5 )]
+layer = 8
+
 [node name="Left Walls" type="Node2D" parent="."]
 position = Vector2( 576, 16 )
 
@@ -107,5 +110,3 @@ position = Vector2( 864, 240 )
 stream = ExtResource( 10 )
 volume_db = -20.0
 autoplay = true
-
-[node name="GUI" parent="." instance=ExtResource( 5 )]

@@ -13,7 +13,7 @@ func hit():
 	randomize()
 	var chance = randf()
 	
-	if Global.num_bricks > 1 and chance > 0.4:
+	if Global.num_bricks > 1 and chance > 0.6:
 		
 		# Picks which power up to drop
 		var chance2 = randf()
