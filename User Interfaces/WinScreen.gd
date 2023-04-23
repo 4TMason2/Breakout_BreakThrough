@@ -12,3 +12,8 @@ func update_interface():
 func _on_MainMenu_pressed():
 	Global.reset()
 	get_tree().change_scene("res://User Interfaces/StartMenu.tscn")
+
+
+func _on_Credits_pressed():
+	Global.reset()
+	get_tree().change_scene("res://User Interfaces/GodotCredits.tscn")
