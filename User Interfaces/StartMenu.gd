@@ -10,7 +10,6 @@ func _ready():
 
 
 
-
 func _on_StartButton_pressed():
 	Global.lives = Global.max_lives
 	get_tree().change_scene("res://Levels/Level1.tscn")
