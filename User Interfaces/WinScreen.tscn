@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Fonts/Monocraft.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://User Interfaces/WinScreen.gd" type="Script" id=2]
@@ -17,6 +17,12 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
+size = 36
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
 size = 36
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
@@ -66,9 +72,18 @@ custom_fonts/font = SubResource( 2 )
 text = "Main Menu"
 flat = true
 
+[node name="Credits" type="Button" parent="VBoxContainer"]
+margin_top = 178.0
+margin_right = 228.0
+margin_bottom = 220.0
+custom_fonts/font = SubResource( 4 )
+text = "Credits"
+flat = true
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 volume_db = -20.0
 autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/MainMenu" to="." method="_on_MainMenu_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_Credits_pressed"]

@@ -2,7 +2,7 @@ extends Node
 
 var max_lives = 3
 var current_level = 1
-var final_level = 4
+var final_level = 5
 var lives = max_lives
 var hud # Pointer to the HUD
 var num_bricks = 0
@@ -26,7 +26,6 @@ func count_bricks():
 		bricks.append(brick)
 		num_bricks += 1
 	print(num_bricks," counted")
-
 
 
 func load_level(level_num):

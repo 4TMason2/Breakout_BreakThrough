@@ -6,7 +6,6 @@ var numHits = 2
 var firstHitSprite = preload("res://Assets/Sprites/2hitbrick-cracked.png")
 signal brick_destroyed
 
-
 func hit():
 	
 	numHits -= 1
