@@ -1,6 +1,7 @@
 extends Control
 
 var slider = load("res://Objects/Slider1M.tscn")
+var ball = load("res://Objects/BallM.tscn")
 var server_ip_address = ''
 var master = 0
 
@@ -56,12 +57,17 @@ func _connected_to_server() -> void:
 
 func instance_player(id) -> void:
 	var player_instance = null
+	var player_instance2 = null
 	if master == 1:
 		player_instance = Global.instance_node_at_location(slider, Players, Vector2(24, 300))
+		player_instance2 = Global.instance_node_at_location(ball, Players, Vector2(320, 300))
 	else:
 		player_instance = Global.instance_node_at_location(slider, Players, Vector2(952, 300))
+		player_instance2 = Global.instance_node_at_location(ball, Players, Vector2(660, 300))
 	player_instance.name = str(id)
 	player_instance.set_network_master(id)
+	player_instance2.name = str(id)
+	player_instance2.set_network_master(id)
 
 
 func _on_Server_IP_text_entered(new_text):

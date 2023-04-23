@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/Fonts/NotoSansAvestan-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Sprites/BallEmpty.png" type="Texture" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://Objects/Brick.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Levels/HUD.gd" type="Script" id=8]
 [ext_resource path="res://Assets/Sprites/ball.png" type="Texture" id=9]
-[ext_resource path="res://Objects/Ball.tscn" type="PackedScene" id=10]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.454902 )
@@ -239,6 +238,3 @@ rotation = -1.57349
 [node name="Sprite6" parent="." instance=ExtResource( 5 )]
 position = Vector2( 512, 460 )
 rotation = -1.57349
-
-[node name="Ball" parent="." instance=ExtResource( 10 )]
-position = Vector2( 688, 296 )

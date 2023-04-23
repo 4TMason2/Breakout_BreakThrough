@@ -2,7 +2,6 @@ extends KinematicBody2D
 
 const SLIDER_SPEED = 500
 
-#const BALL = preload("res://Objects/Ball.tscn")
 
 onready var tween = $Tween
 puppet var puppet_position = Vector2(0,0) setget puppet_position_set
