@@ -10,7 +10,6 @@ func _ready():
 
 
 
-
 func _on_StartButton_pressed():
 	Global.lives = Global.max_lives
 	get_tree().change_scene("res://Levels/Level1.tscn")
@@ -19,8 +18,7 @@ func _on_StartButton_pressed():
 
 
 func _on_ShopButton_pressed():
-	var options = load("res://User Interfaces/Options.tscn").instance()
-	get_tree().current_scene.add_child(options)
+	get_tree().change_scene("res://User Interfaces/Shop.tscn")
 
 
 func _on_QuitButton_pressed():
