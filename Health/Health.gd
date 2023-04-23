@@ -24,4 +24,4 @@ func _initialize():
 
 
 func _on_boostSpeedBrick_brick_destroyed():
-	pass # Replace with function body.
+	decrease()
