@@ -13,18 +13,23 @@ var pause_timer = 0.0
 func _ready():
 	start_pos = position
 	# Makes it go in a random direction
-	# ball_vel = Vector2(rand_range(-1,1),rand_range(-1,1)).normalized() * BALL_SPEED
-	ball_vel = Vector2(0,BALL_SPEED)
+	randomize()
+	ball_vel = Vector2(rand_range(-1,1),rand_range(-1,1)).normalized() * BALL_SPEED
+	pause_ball()
+	#ball_vel = Vector2(0,BALL_SPEED)
+
+func pause_ball():
+	position = start_pos
+	prev_ball_vel = ball_vel
+	ball_vel = Vector2.ZERO
+	is_paused = true
 
 
 func _process(delta):
 	
 	if is_paused:
-		# print("is paused")
-		
 		# Increase the pause timer, if after a given amount of time, move the ball
 		pause_timer = pause_timer + delta
-		# print(pause_timer)
 		if pause_timer >= pause_time:
 			is_paused = false
 			pause_timer = 0.0
@@ -35,21 +40,16 @@ func _process(delta):
 		Global.lose_life()
 		
 		if Global.lives <= 0:
-			end_game()
 			queue_free()
 		else:
-			position = start_pos
-			prev_ball_vel = ball_vel
-			ball_vel = Vector2.ZERO
-			is_paused = true
+			pause_ball()
 		
 	if not is_paused:
 		# print("not paused")
 		ball_vel = ball_vel.normalized() * BALL_SPEED
 		
 
-func end_game():
-	print("game over")
+
 
 func _physics_process(delta):
 	var collision_info = move_and_collide(ball_vel*delta)

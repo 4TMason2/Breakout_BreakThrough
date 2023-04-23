@@ -1,26 +1,14 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Assets/Sprites/BallEmpty.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Sprites/ball.png" type="Texture" id=2]
+[ext_resource path="res://User Interfaces/GUI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Slider.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/Wall.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Objects/Ball.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objects/2HitBrick.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/TopWall.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Assets/Fonts/NotoSansAvestan-Regular.ttf" type="DynamicFontData" id=8]
-[ext_resource path="res://Levels/HUD.gd" type="Script" id=9]
 [ext_resource path="res://Assets/Music/MediumBreakout.mp3" type="AudioStream" id=10]
-
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0, 0, 0, 0.454902 )
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="DynamicFont" id=2]
-size = 32
-font_data = ExtResource( 8 )
+[ext_resource path="res://Objects/3hitBrick.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Objects/Brick.tscn" type="PackedScene" id=12]
 
 [node name="Node2D" type="Node2D"]
 
@@ -92,100 +80,69 @@ position = Vector2( 512, 320 )
 
 [node name="Bricks" type="Node2D" parent="."]
 
-[node name="2HitBrick" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 96, 88 )
+[node name="2HitBricks" type="Node2D" parent="Bricks"]
 
-[node name="2HitBrick2" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 200, 88 )
+[node name="2HitBrick" parent="Bricks/2HitBricks" instance=ExtResource( 6 )]
+position = Vector2( 96, 112 )
 
-[node name="2HitBrick3" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 304, 88 )
+[node name="2HitBrick2" parent="Bricks/2HitBricks" instance=ExtResource( 6 )]
+position = Vector2( 512, 112 )
 
-[node name="2HitBrick4" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 408, 88 )
+[node name="2HitBrick5" parent="Bricks/2HitBricks" instance=ExtResource( 6 )]
+position = Vector2( 928, 112 )
 
-[node name="2HitBrick5" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 512, 88 )
+[node name="2HitBrick6" parent="Bricks/2HitBricks" instance=ExtResource( 6 )]
+position = Vector2( 928, 240 )
 
-[node name="2HitBrick6" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 616, 88 )
+[node name="2HitBrick3" parent="Bricks/2HitBricks" instance=ExtResource( 6 )]
+position = Vector2( 96, 240 )
 
-[node name="2HitBrick7" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 720, 88 )
+[node name="2HitBrick4" parent="Bricks/2HitBricks" instance=ExtResource( 6 )]
+position = Vector2( 512, 240 )
 
-[node name="2HitBrick8" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 824, 88 )
+[node name="3HitBricks" type="Node2D" parent="Bricks"]
 
-[node name="2HitBrick9" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 920, 88 )
+[node name="3HitBrick" parent="Bricks/3HitBricks" instance=ExtResource( 11 )]
+position = Vector2( 288, 112 )
 
-[node name="2HitBrick10" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 96, 144 )
+[node name="3HitBrick2" parent="Bricks/3HitBricks" instance=ExtResource( 11 )]
+position = Vector2( 288, 240 )
 
-[node name="2HitBrick11" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 200, 144 )
+[node name="3HitBrick3" parent="Bricks/3HitBricks" instance=ExtResource( 11 )]
+position = Vector2( 736, 112 )
 
-[node name="2HitBrick12" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 304, 144 )
+[node name="3HitBrick4" parent="Bricks/3HitBricks" instance=ExtResource( 11 )]
+position = Vector2( 736, 240 )
 
-[node name="2HitBrick13" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 408, 144 )
+[node name="1HitBrick" type="Node2D" parent="Bricks"]
 
-[node name="2HitBrick14" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 512, 144 )
+[node name="Brick" parent="Bricks/1HitBrick" instance=ExtResource( 12 )]
+position = Vector2( 192, 112 )
 
-[node name="2HitBrick15" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 616, 144 )
+[node name="Brick2" parent="Bricks/1HitBrick" instance=ExtResource( 12 )]
+position = Vector2( 192, 240 )
 
-[node name="2HitBrick16" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 720, 144 )
+[node name="Brick3" parent="Bricks/1HitBrick" instance=ExtResource( 12 )]
+position = Vector2( 384, 112 )
 
-[node name="2HitBrick17" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 824, 144 )
+[node name="Brick4" parent="Bricks/1HitBrick" instance=ExtResource( 12 )]
+position = Vector2( 384, 240 )
 
-[node name="2HitBrick18" parent="Bricks" instance=ExtResource( 6 )]
-position = Vector2( 920, 144 )
+[node name="Brick5" parent="Bricks/1HitBrick" instance=ExtResource( 12 )]
+position = Vector2( 640, 112 )
 
-[node name="HUD" type="CanvasLayer" parent="."]
-script = ExtResource( 9 )
+[node name="Brick6" parent="Bricks/1HitBrick" instance=ExtResource( 12 )]
+position = Vector2( 640, 240 )
 
-[node name="Panel" type="Panel" parent="HUD"]
-margin_left = 19.0
-margin_top = 23.0
-margin_right = 208.0
-margin_bottom = 79.0
-custom_styles/panel = SubResource( 1 )
+[node name="Brick7" parent="Bricks/1HitBrick" instance=ExtResource( 12 )]
+position = Vector2( 832, 112 )
 
-[node name="Label" type="Label" parent="HUD"]
-margin_left = 26.0
-margin_top = 27.0
-margin_right = 100.0
-margin_bottom = 120.0
-custom_fonts/font = SubResource( 2 )
-text = "Lives: 
-"
-
-[node name="BallFull" type="TextureRect" parent="HUD"]
-margin_left = 114.0
-margin_top = 41.0
-margin_right = 301.0
-margin_bottom = 105.0
-rect_scale = Vector2( 0.406, 0.404 )
-texture = ExtResource( 2 )
-expand = true
-stretch_mode = 2
-
-[node name="BallEmpty" type="TextureRect" parent="HUD"]
-margin_left = 114.0
-margin_top = 41.0
-margin_right = 301.0
-margin_bottom = 105.0
-rect_scale = Vector2( 0.406, 0.404 )
-texture = ExtResource( 1 )
-expand = true
-stretch_mode = 2
+[node name="Brick8" parent="Bricks/1HitBrick" instance=ExtResource( 12 )]
+position = Vector2( 832, 240 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
 volume_db = -20.0
 autoplay = true
+
+[node name="GUI" parent="." instance=ExtResource( 1 )]
