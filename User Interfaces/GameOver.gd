@@ -11,6 +11,7 @@ func _on_ContiueButton_pressed():
 
 
 func _on_MainMenu_pressed():
+	Global.reset()
 	get_tree().change_scene("res://User Interfaces/StartMenu.tscn")
 
 #Ball.$Sprite.set_texture()

@@ -73,6 +73,7 @@ func add_life():
 		hud.load_hearts()
 
 func reset():
+	current_level = 1
 	score = 0
 	lives = max_lives
 
