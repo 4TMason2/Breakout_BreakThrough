@@ -61,8 +61,6 @@ func reset_ball_speed():
 	BALL_SPEED = 500
 	
 
-
-
 func _physics_process(delta):
 	var collision_info = move_and_collide(ball_vel*delta)
 	if collision_info:
@@ -74,9 +72,12 @@ func _physics_process(delta):
 			ball_vel = ball_vel.bounce(collision_info.get_normal())
 			if collider.get_parent().is_in_group("spec_Bricks"):
 				collider.get_parent().hit()
-				BALL_SPEED = BALL_SPEED*125/100
+				#if (Global.num_bricks > 8): 
+				#failed attempt to make the ball speeds up more when the boss gets low on health
+				BALL_SPEED = BALL_SPEED*120/100 # 125 -> 120
+				#else: BALL_SPEED = BALL_SPEED*1500/100
 				get_node("Sprite").set_texture(ball_spedUp)
-				spedUp_time = 2.0
+				spedUp_time = 1.5 # change from 2.0 -> 1.5
 			else:
 				if collider.get_parent().is_in_group("Bricks"):
 					collider.get_parent().hit()

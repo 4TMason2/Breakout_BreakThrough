@@ -2,7 +2,7 @@ extends Node
 
 var max_lives = 3
 var current_level = 1
-var final_level = 5
+var final_level = 5 #   Isn't it 4?
 var lives = max_lives
 var hud # Pointer to the HUD
 var num_bricks = 0
@@ -25,6 +25,9 @@ func count_bricks():
 	for brick in get_tree().get_nodes_in_group("Bricks"):
 		bricks.append(brick)
 		num_bricks += 1
+	for brick in get_tree().get_nodes_in_group("spec_Bricks"):
+		bricks.append(brick)
+		num_bricks += 1	
 	print(num_bricks," counted")
 
 

@@ -4,7 +4,7 @@ signal max_changed(new_max)
 signal changed(new_amount)
 signal depleted 
 
-export(int) var max_amount = 8
+export(int) var max_amount = 10
 onready var current = max_amount
 
 func _ready():
