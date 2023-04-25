@@ -11,8 +11,7 @@ func _ready():
 
 
 func _on_StartButton_pressed():
-	var options = load("res://User Interfaces/Screen2.tscn").instance()
-	get_tree().current_scene.add_child(options)
+	get_tree().change_scene("res://User Interfaces/Screen2.tscn")
 	
 
 
