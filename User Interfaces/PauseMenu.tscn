@@ -18,6 +18,7 @@ font_data = ExtResource( 2 )
 
 [node name="PauseMenu" type="Control"]
 pause_mode = 2
+physics_interpolation_mode = 1
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -29,14 +30,21 @@ anchor_bottom = 1.0
 mouse_filter = 1
 color = Color( 0, 0, 0, 0.352941 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer"]
 margin_left = 431.0
-margin_top = 227.0
+margin_top = 209.0
 margin_right = 593.0
-margin_bottom = 409.0
+margin_bottom = 391.0
 custom_constants/separation = 13
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer"]
 margin_right = 162.0
 margin_bottom = 41.0
 custom_fonts/font = SubResource( 1 )
@@ -44,14 +52,14 @@ text = "Paused"
 align = 1
 valign = 1
 
-[node name="Control" type="Control" parent="VBoxContainer"]
+[node name="Control" type="Control" parent="CanvasLayer/CenterContainer/VBoxContainer"]
 margin_top = 54.0
 margin_right = 162.0
 margin_bottom = 74.0
 rect_min_size = Vector2( 0, 20 )
 mouse_filter = 1
 
-[node name="ResumeButton" type="Button" parent="VBoxContainer"]
+[node name="ResumeButton" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer"]
 margin_top = 87.0
 margin_right = 162.0
 margin_bottom = 110.0
@@ -59,7 +67,7 @@ custom_fonts/font = SubResource( 2 )
 text = "Resume Game"
 flat = true
 
-[node name="MainMenuButton" type="Button" parent="VBoxContainer"]
+[node name="MainMenuButton" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer"]
 margin_top = 123.0
 margin_right = 162.0
 margin_bottom = 146.0
@@ -67,7 +75,7 @@ custom_fonts/font = SubResource( 4 )
 text = "Main Menu"
 flat = true
 
-[node name="QuitButton" type="Button" parent="VBoxContainer"]
+[node name="QuitButton" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer"]
 margin_top = 159.0
 margin_right = 162.0
 margin_bottom = 182.0
@@ -75,6 +83,6 @@ custom_fonts/font = SubResource( 3 )
 text = "Quit"
 flat = true
 
-[connection signal="pressed" from="VBoxContainer/ResumeButton" to="." method="_on_ResumeButton_pressed"]
-[connection signal="pressed" from="VBoxContainer/MainMenuButton" to="." method="_on_MainMenuButton_pressed"]
-[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/ResumeButton" to="." method="_on_ResumeButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/MainMenuButton" to="." method="_on_MainMenuButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
