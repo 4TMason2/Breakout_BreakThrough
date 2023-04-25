@@ -259,22 +259,6 @@ margin_bottom = -37.0
 custom_fonts/font = SubResource( 7 )
 text = "OK"
 
-[node name="Slider Skins" type="Tabs" parent="TabContainer"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 44.0
-margin_right = -10.0
-margin_bottom = -10.0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Slider Skins"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 12.0
-margin_right = -12.0
-margin_bottom = -12.0
-
 [node name="Title" type="Label" parent="."]
 margin_left = 416.0
 margin_top = 56.0
