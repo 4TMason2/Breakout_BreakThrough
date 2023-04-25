@@ -77,6 +77,6 @@ sync func switch_to_game() -> void:
 func _on_BackButton_pressed():
 	if alreadyPressed == 1:
 		MultiplayerSetUp.server.close_connection()
-		MultiplayerSetUp.kill_player()
+		MultiplayerSetUp._server_disconnected()
 	alreadyPressed = 0
 	get_tree().change_scene("res://User Interfaces/Screen2.tscn")
