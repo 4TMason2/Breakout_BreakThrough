@@ -41,8 +41,8 @@ func _player_disconnected(id) -> void:
 func _on_JoinButton_pressed():
 	if alreadyPressed == 0:
 		alreadyPressed = 1
-	#if server_ip_address != '':
-		#MultiplayerSetUp.ip_address = server_ip_address
+		if server_ip_address != '':
+			MultiplayerSetUp.ip_address = server_ip_address
 		MultiplayerSetUp.connect_server()
 
 func _on_CreateButton_pressed():
