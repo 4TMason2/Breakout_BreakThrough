@@ -2,7 +2,7 @@ extends Node
 
 const PORT = 28960
 
-var ip_address = "127.0.0.1"
+var ip_address = ""
 var server = null
 var client = null
 var master = 0
@@ -14,8 +14,8 @@ func _ready() -> void:
 	#for ip in IP.get_local_address():
 	#	if ip.begins_with("192.168.") and not ip.ends_with(".1"):
 	#		ip_address = ip
-	if OS.get_name() == "Windows":
-		ip_address = IP.get_local_addresses()[3]
+	#if OS.get_name() == "Windows":
+	#	ip_address = IP.get_local_addresses()[3]
 	
 	get_tree().connect('connected_to_server', self, '_connected_to_server')
 	get_tree().connect('server_disconnected', self, '_server_disconnected')

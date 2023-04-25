@@ -13,7 +13,7 @@ func _ready() -> void:
 	get_tree().connect('network_peer_disconnected', self, '_player_disconnected')
 	get_tree().connect('connected_to_server', self, '_connected_to_server')
 	
-	device_ip_address.text = MultiplayerSetUp.ip_address
+	#device_ip_address.text = MultiplayerSetUp.ip_address
 	
 	if get_tree().network_peer == null:
 		start_game.hide()
@@ -47,6 +47,8 @@ func _on_JoinButton_pressed():
 
 func _on_CreateButton_pressed():
 	if alreadyPressed == 0:
+		MultiplayerSetUp.ip_address = server_ip_address
+		print(MultiplayerSetUp.ip_address)
 		alreadyPressed = 1
 		MultiplayerSetUp.master = 1
 		MultiplayerSetUp.create_server()
