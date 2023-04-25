@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Sprites/arcadeBackground.png" type="Texture" id=1]
+[ext_resource path="res://User Interfaces/screen3.gd" type="Script" id=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -176.0
+margin_top = -108.0
+margin_right = 91.0
+margin_bottom = 43.0
+
+[node name="CompButton" type="Button" parent="VBoxContainer"]
+margin_right = 267.0
+margin_bottom = 20.0
+text = "Competitive"
+
+[node name="CoopButton" type="Button" parent="VBoxContainer"]
+margin_top = 24.0
+margin_right = 267.0
+margin_bottom = 44.0
+text = "Cooperative"
+
+[node name="BackButton" type="Button" parent="VBoxContainer"]
+margin_top = 48.0
+margin_right = 267.0
+margin_bottom = 68.0
+text = "Back"
+
+[node name="ArcadeBackground" type="Sprite" parent="."]
+position = Vector2( 512, 304 )
+scale = Vector2( 1.50588, 0.60475 )
+texture = ExtResource( 1 )
+
+[connection signal="pressed" from="VBoxContainer/CompButton" to="." method="_on_CompButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/CoopButton" to="." method="_on_CoopButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_BackButton_pressed"]

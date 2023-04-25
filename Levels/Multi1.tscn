@@ -1,0 +1,186 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Music/EasyBreakout.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Objects/2HitBrick.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/3hitBrick.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/TopWall.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/Brick.tscn" type="PackedScene" id=7]
+
+[node name="Multi1" type="Node2D"]
+
+[node name="TopWalls" type="Node2D" parent="."]
+position = Vector2( 64, 16 )
+
+[node name="TopWall" parent="TopWalls" instance=ExtResource( 6 )]
+
+[node name="TopWall2" parent="TopWalls" instance=ExtResource( 6 )]
+position = Vector2( 128, 0 )
+
+[node name="TopWall3" parent="TopWalls" instance=ExtResource( 6 )]
+position = Vector2( 256, 0 )
+
+[node name="TopWall4" parent="TopWalls" instance=ExtResource( 6 )]
+position = Vector2( 384, 0 )
+
+[node name="TopWall5" parent="TopWalls" instance=ExtResource( 6 )]
+position = Vector2( 512, 0 )
+
+[node name="TopWall6" parent="TopWalls" instance=ExtResource( 6 )]
+position = Vector2( 640, 0 )
+
+[node name="TopWall7" parent="TopWalls" instance=ExtResource( 6 )]
+position = Vector2( 768, 0 )
+
+[node name="TopWall8" parent="TopWalls" instance=ExtResource( 6 )]
+position = Vector2( 896, 0 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -20.0
+autoplay = true
+
+[node name="TopWalls2" type="Node2D" parent="."]
+position = Vector2( 64, 584 )
+
+[node name="TopWall" parent="TopWalls2" instance=ExtResource( 6 )]
+
+[node name="TopWall2" parent="TopWalls2" instance=ExtResource( 6 )]
+position = Vector2( 128, 0 )
+
+[node name="TopWall3" parent="TopWalls2" instance=ExtResource( 6 )]
+position = Vector2( 256, 0 )
+
+[node name="TopWall4" parent="TopWalls2" instance=ExtResource( 6 )]
+position = Vector2( 384, 0 )
+
+[node name="TopWall5" parent="TopWalls2" instance=ExtResource( 6 )]
+position = Vector2( 512, 0 )
+
+[node name="TopWall6" parent="TopWalls2" instance=ExtResource( 6 )]
+position = Vector2( 640, 0 )
+
+[node name="TopWall7" parent="TopWalls2" instance=ExtResource( 6 )]
+position = Vector2( 768, 0 )
+
+[node name="TopWall8" parent="TopWalls2" instance=ExtResource( 6 )]
+position = Vector2( 896, 0 )
+
+[node name="Brick" parent="." instance=ExtResource( 7 )]
+position = Vector2( 480, 108 )
+rotation = 1.57236
+
+[node name="Brick2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 544, 108 )
+rotation = 1.57236
+
+[node name="Brick5" parent="." instance=ExtResource( 7 )]
+position = Vector2( 576, 236 )
+rotation = 1.57236
+
+[node name="Brick6" parent="." instance=ExtResource( 7 )]
+position = Vector2( 448, 236 )
+rotation = 1.57236
+
+[node name="Brick7" parent="." instance=ExtResource( 7 )]
+position = Vector2( 576, 364 )
+rotation = 1.57236
+
+[node name="Brick9" parent="." instance=ExtResource( 7 )]
+position = Vector2( 608, 300 )
+rotation = 1.57236
+
+[node name="Brick10" parent="." instance=ExtResource( 7 )]
+position = Vector2( 416, 300 )
+rotation = 1.57236
+
+[node name="Brick8" parent="." instance=ExtResource( 7 )]
+position = Vector2( 448, 364 )
+rotation = 1.57236
+
+[node name="Brick3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 544, 492 )
+rotation = 1.57236
+
+[node name="Brick4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 480, 492 )
+rotation = 1.57236
+
+[node name="2HitBrick" parent="." instance=ExtResource( 4 )]
+position = Vector2( 512, 524 )
+rotation = 1.57167
+
+[node name="2HitBrick2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 512, 76 )
+rotation = 1.57167
+
+[node name="2HitBrick7" parent="." instance=ExtResource( 4 )]
+position = Vector2( 576, 300 )
+rotation = 1.57167
+
+[node name="2HitBrick8" parent="." instance=ExtResource( 4 )]
+position = Vector2( 448, 300 )
+rotation = 1.57167
+
+[node name="2HitBrick3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 544, 172 )
+rotation = 1.57167
+
+[node name="2HitBrick4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 480, 172 )
+rotation = 1.57167
+
+[node name="2HitBrick5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 480, 428 )
+rotation = 1.57167
+
+[node name="2HitBrick6" parent="." instance=ExtResource( 4 )]
+position = Vector2( 544, 428 )
+rotation = 1.57167
+
+[node name="Sprite" parent="." instance=ExtResource( 5 )]
+position = Vector2( 512, 268 )
+rotation = 1.56711
+
+[node name="Sprite2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 512, 204 )
+rotation = -4.70718
+
+[node name="Sprite7" parent="." instance=ExtResource( 5 )]
+position = Vector2( 544, 300 )
+rotation = 1.56675
+
+[node name="Sprite10" parent="." instance=ExtResource( 5 )]
+position = Vector2( 480, 300 )
+rotation = -4.71464
+
+[node name="Sprite12" parent="." instance=ExtResource( 5 )]
+position = Vector2( 480, 364 )
+rotation = -4.71262
+
+[node name="Sprite11" parent="." instance=ExtResource( 5 )]
+position = Vector2( 480, 236 )
+rotation = 1.5699
+
+[node name="Sprite8" parent="." instance=ExtResource( 5 )]
+position = Vector2( 544, 236 )
+rotation = 1.56573
+
+[node name="Sprite9" parent="." instance=ExtResource( 5 )]
+position = Vector2( 544, 364 )
+rotation = 1.56943
+
+[node name="Sprite3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 512, 140 )
+rotation = -4.7118
+
+[node name="Sprite4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 512, 332 )
+rotation = -4.71455
+
+[node name="Sprite5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 512, 396 )
+rotation = 1.56639
+
+[node name="Sprite6" parent="." instance=ExtResource( 5 )]
+position = Vector2( 512, 460 )
+rotation = -4.71471

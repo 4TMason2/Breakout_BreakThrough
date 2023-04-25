@@ -54,6 +54,7 @@ func _process(delta):
 		if Global.lives <= 0:
 			queue_free()
 		else:
+
 			reset_ball_speed()
 			pause_ball()
 		
@@ -67,10 +68,10 @@ func _process(delta):
 		
 
 
+
 func reset_ball_speed():
 	get_node("Sprite").set_texture(ball_normal)
 	BALL_SPEED = 500
-
 
 func _physics_process(delta):
 	var collision_info = move_and_collide(ball_vel*delta)

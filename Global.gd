@@ -8,6 +8,8 @@ var hud # Pointer to the HUD
 var num_bricks = 0
 var bricks = []
 var score = 0 setget set_score
+var startM = 0
+var typeM = 0
 # Dictionary 
 var store = {
 	'bought' : [true, false, false, false],
@@ -20,26 +22,28 @@ onready var ball = get_node_or_null("Ball")
 signal level_loaded
 signal score_updated
 
-
 func _ready():
 	connect("start_game",self,"load_level")
 
 func count_bricks():
 	num_bricks = 0
 	bricks = []
-	print(num_bricks," before count")
+	#print(num_bricks," before count")
 	for brick in get_tree().get_nodes_in_group("Bricks"):
 		bricks.append(brick)
 		num_bricks += 1
+
 	for brick in get_tree().get_nodes_in_group("spec_Bricks"):
 		bricks.append(brick)
 		num_bricks += 1	
 	print(num_bricks," counted")
 
 
+
 func load_level(level_num):
 	var level_path = "res://Levels/Level" + str(level_num) + ".tscn"
 	Global.lives = Global.max_lives
+
 	print("Loading level: ", level_path)
 	
 	for node in get_tree().get_nodes_in_group("Powerups"):
@@ -53,7 +57,7 @@ func load_level(level_num):
 
 func brick_break():
 	num_bricks -= 1
-	print(num_bricks)
+	#print(num_bricks)
 	if num_bricks == 0:
 		current_level += 1
 		if current_level == final_level:
@@ -86,6 +90,18 @@ func reset():
 func set_score(value: int) -> void:
 	score = value
 	emit_signal("score_updated")
+
+
+
+func instance_node_at_location(node: Object, parent: Object, location: Vector2) -> Object:
+	var node_instance = instance_node(node, parent)
+	node_instance.global_position = location
+	return node_instance
+
+func instance_node(node: Object, parent: Object) -> Object:
+	var node_instance = node.instance()
+	parent.add_child(node_instance)
+	return node_instance
 
 
 func save_store():
