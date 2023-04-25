@@ -2,7 +2,7 @@ extends Control
 
 
 func _process(delta):
-	$Points.text = "Points: " + str(Global.score)
+	$Points.text = "Points: " + str(Global.points)
 	
 
 

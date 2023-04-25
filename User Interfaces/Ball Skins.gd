@@ -38,13 +38,13 @@ func buy(price, item_num):
 	if Global.store.bought[item_num] == false:
 		
 		# Checks if they have enough money
-		if Global.score >= price:
-			Global.score -= price
+		if Global.points >= price:
+			Global.points -= price
 			Global.store.bought[item_num] = true
 			panels.get_node('Panel' + str(item_num + 1)).get_node('Button').text = 'Select'
 			Global.save_store()
 		else:
-			var rem = price - Global.score
+			var rem = price - Global.points
 			$NotEnough/Label.text = 'You need ' + str(rem) + ' more points to buy this'
 			$NotEnough.show()
 	else:

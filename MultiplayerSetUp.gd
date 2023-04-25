@@ -2,7 +2,7 @@ extends Node
 
 const PORT = 28960
 
-var ip_address = "127.0.0.1"
+var ip_address = "10.95.3.17"
 var server = null
 var client = null
 var master = 0

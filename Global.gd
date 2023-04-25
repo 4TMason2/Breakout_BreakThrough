@@ -10,6 +10,7 @@ var bricks = []
 var score = 0 setget set_score
 var startM = 0
 var typeM = 0
+var points = 0
 # Dictionary 
 var store = {
 	'bought' : [true, false, false, false],
@@ -84,6 +85,7 @@ func add_life():
 
 func reset():
 	current_level = 1
+	points = points + score
 	score = 0
 	lives = max_lives
 
