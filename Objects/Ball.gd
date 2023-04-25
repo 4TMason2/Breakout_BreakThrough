@@ -8,11 +8,21 @@ var start_pos
 var is_paused = false
 var pause_time = 2.0
 var pause_timer = 0.0
-var ball_normal = preload("res://Assets/Sprites/ball.png")
+var ball_normal
 var ball_spedUp = preload("res://Assets/Sprites/ball_spedup(3).png")
 var spedUp_time = 0.0
 
+var textures = [
+	"res://Assets/Sprites/ball.png",
+	"res://Assets/Sprites/redBall.png",
+	"res://Assets/Sprites/camoBall.png",
+	"res://Assets/Sprites/glowingBall.png",
+]
+
 func _ready():
+	Global.load_store()
+	$Sprite.texture = load(textures[Global.store.selected])
+	ball_normal =  load(textures[Global.store.selected])
 	start_pos = position
 	# Makes it go in a random direction
 	randomize()
@@ -55,11 +65,12 @@ func _process(delta):
 		# print("not paused")
 		ball_vel = ball_vel.normalized() * BALL_SPEED
 		
-		
+
+
 func reset_ball_speed():
 	get_node("Sprite").set_texture(ball_normal)
 	BALL_SPEED = 500
-	
+
 
 func _physics_process(delta):
 	var collision_info = move_and_collide(ball_vel*delta)
