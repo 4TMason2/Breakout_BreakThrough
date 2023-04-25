@@ -17,8 +17,10 @@ func _on_ResumeButton_pressed():
 	self.is_paused = false
 
 func _on_QuitButton_pressed():
+	self.is_paused = false
 	get_tree().quit()
 
 func _on_MainMenuButton_pressed():
+	self.is_paused = false
 	Global.reset()
 	get_tree().change_scene("res://User Interfaces/StartMenu.tscn")
