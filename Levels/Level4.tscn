@@ -1,0 +1,160 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Objects/Slider.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/Skull.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/TopWall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/boostSpeedBrick.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Wall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/Ball.tscn" type="PackedScene" id=6]
+[ext_resource path="res://User Interfaces/GUI.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Music/Project 37c.mp3" type="AudioStream" id=8]
+[ext_resource path="res://Health/HealthBar.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Health/Health.tscn" type="PackedScene" id=12]
+
+[node name="Boss" type="Node2D"]
+
+[node name="Left Walls" type="Node2D" parent="."]
+position = Vector2( 576, 16 )
+
+[node name="LeftWall" parent="Left Walls" instance=ExtResource( 5 )]
+position = Vector2( -560, 48 )
+
+[node name="LeftWall2" parent="Left Walls" instance=ExtResource( 5 )]
+position = Vector2( -560, 304 )
+
+[node name="LeftWall3" parent="Left Walls" instance=ExtResource( 5 )]
+position = Vector2( -560, 176 )
+
+[node name="LeftWall4" parent="Left Walls" instance=ExtResource( 5 )]
+position = Vector2( -560, 432 )
+
+[node name="LeftWall5" parent="Left Walls" instance=ExtResource( 5 )]
+position = Vector2( -560, 688 )
+
+[node name="LeftWall6" parent="Left Walls" instance=ExtResource( 5 )]
+position = Vector2( -560, 560 )
+
+[node name="Slider" parent="." instance=ExtResource( 1 )]
+position = Vector2( 480, 544 )
+
+[node name="Ball" parent="." instance=ExtResource( 6 )]
+position = Vector2( 480, 288 )
+
+[node name="RightWalls" type="Node2D" parent="."]
+position = Vector2( 1008, 64 )
+
+[node name="RightWall1" parent="RightWalls" instance=ExtResource( 5 )]
+
+[node name="RightWall2" parent="RightWalls" instance=ExtResource( 5 )]
+position = Vector2( 0, 256 )
+
+[node name="RightWall3" parent="RightWalls" instance=ExtResource( 5 )]
+position = Vector2( 0, 128 )
+
+[node name="RightWall4" parent="RightWalls" instance=ExtResource( 5 )]
+position = Vector2( 0, 384 )
+
+[node name="RightWall5" parent="RightWalls" instance=ExtResource( 5 )]
+position = Vector2( 0, 640 )
+
+[node name="RightWall6" parent="RightWalls" instance=ExtResource( 5 )]
+position = Vector2( 0, 512 )
+
+[node name="TopWalls" type="Node2D" parent="."]
+position = Vector2( 64, 16 )
+
+[node name="TopWall" parent="TopWalls" instance=ExtResource( 3 )]
+
+[node name="TopWall2" parent="TopWalls" instance=ExtResource( 3 )]
+position = Vector2( 128, 0 )
+
+[node name="TopWall3" parent="TopWalls" instance=ExtResource( 3 )]
+position = Vector2( 256, 0 )
+
+[node name="TopWall4" parent="TopWalls" instance=ExtResource( 3 )]
+position = Vector2( 384, 0 )
+
+[node name="TopWall5" parent="TopWalls" instance=ExtResource( 3 )]
+position = Vector2( 512, 0 )
+
+[node name="TopWall6" parent="TopWalls" instance=ExtResource( 3 )]
+position = Vector2( 640, 0 )
+
+[node name="TopWall7" parent="TopWalls" instance=ExtResource( 3 )]
+position = Vector2( 768, 0 )
+
+[node name="TopWall8" parent="TopWalls" instance=ExtResource( 3 )]
+position = Vector2( 896, 0 )
+
+[node name="Skull" parent="." instance=ExtResource( 2 )]
+position = Vector2( 495, 170 )
+
+[node name="Health" parent="." instance=ExtResource( 12 )]
+
+[node name="Bricks" type="Node2D" parent="."]
+
+[node name="boostSpeedBrick" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 528, 240 )
+rotation = 3.13591
+
+[node name="boostSpeedBrick2" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 464, 240 )
+rotation = 3.13591
+
+[node name="boostSpeedBrick5" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 585, 208 )
+rotation = 1.57079
+
+[node name="boostSpeedBrick6" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 586, 144 )
+rotation = 1.57079
+
+[node name="boostSpeedBrick7" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 409, 208 )
+rotation = 4.71238
+
+[node name="boostSpeedBrick8" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 408, 144 )
+rotation = 4.71238
+
+[node name="boostSpeedBrick3" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 528, 105 )
+rotation = 0.0
+
+[node name="boostSpeedBrick4" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 464, 105 )
+rotation = 0.0
+
+[node name="boostSpeedBrick9" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 813, 176 )
+rotation = 3.13591
+
+[node name="boostSpeedBrick10" parent="Bricks" instance=ExtResource( 4 )]
+position = Vector2( 206, 176 )
+rotation = 3.13591
+
+[node name="HealthBar" parent="." instance=ExtResource( 11 )]
+margin_left = 360.0
+margin_top = 40.0
+margin_right = 664.0
+margin_bottom = 72.0
+
+[node name="GUI" parent="." instance=ExtResource( 7 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -20.0
+autoplay = true
+
+[connection signal="changed" from="Health" to="HealthBar" method="set_value"]
+[connection signal="max_changed" from="Health" to="HealthBar" method="set_max"]
+[connection signal="brick_destroyed" from="Bricks/boostSpeedBrick" to="Health" method="decrease"]
+[connection signal="brick_destroyed" from="Bricks/boostSpeedBrick2" to="Health" method="decrease"]
+[connection signal="brick_destroyed" from="Bricks/boostSpeedBrick5" to="Health" method="decrease"]
+[connection signal="brick_destroyed" from="Bricks/boostSpeedBrick6" to="Health" method="decrease"]
+[connection signal="brick_destroyed" from="Bricks/boostSpeedBrick7" to="Health" method="decrease"]
+[connection signal="brick_destroyed" from="Bricks/boostSpeedBrick8" to="Health" method="decrease"]
+[connection signal="brick_destroyed" from="Bricks/boostSpeedBrick3" to="Health" method="decrease"]
+[connection signal="brick_destroyed" from="Bricks/boostSpeedBrick4" to="Health" method="decrease"]
+[connection signal="brick_destroyed" from="Bricks/boostSpeedBrick9" to="Health" method="decrease"]
+[connection signal="brick_destroyed" from="Bricks/boostSpeedBrick10" to="Health" method="decrease"]

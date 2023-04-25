@@ -14,4 +14,9 @@ func _physics_process(_delta):
 	move_and_slide(slider_vel)
 	slider_vel.x -= slider_vel.x*0.5
 
+func set_value(new_amount):
+	pass # Replace with function body.
 
+
+func decrease():
+	pass # Replace with function body.
