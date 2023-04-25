@@ -61,9 +61,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -68.0
-margin_top = -6.0
+margin_top = -143.0
 margin_right = 68.0
-margin_bottom = 8.0
+margin_bottom = -129.0
 
 [node name="Start" type="Button" parent="CanvasLayer"]
 anchor_left = 0.5
