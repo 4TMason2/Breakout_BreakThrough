@@ -26,5 +26,4 @@ func _on_MultiButton_pressed():
 
 
 func _on_BackButton_pressed():
-	var options = load("res://User Interfaces/StartMenu.tscn").instance()
-	get_tree().current_scene.add_child(options)
+	get_tree().change_scene("res://User Interfaces/StartMenu.tscn")

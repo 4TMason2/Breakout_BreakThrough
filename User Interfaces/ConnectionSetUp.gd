@@ -75,8 +75,8 @@ sync func switch_to_game() -> void:
 		get_tree().change_scene("res://Levels/Multi2.tscn")
 
 func _on_BackButton_pressed():
-	alreadyPressed = 0
-	if get_tree().has_network_peer():
+	if alreadyPressed == 1:
 		MultiplayerSetUp.server.close_connection()
 		MultiplayerSetUp.kill_player()
+	alreadyPressed = 0
 	get_tree().change_scene("res://User Interfaces/Screen2.tscn")
