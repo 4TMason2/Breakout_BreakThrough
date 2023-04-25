@@ -8,6 +8,12 @@ var hud # Pointer to the HUD
 var num_bricks = 0
 var bricks = []
 var score = 0 setget set_score
+# Dictionary 
+var store = {
+	'bought' : [true, false, false, false],
+	'selected' : 0,
+}
+var save_store_path = 'user://save'
 
 onready var ball = get_node_or_null("Ball")
 
@@ -77,6 +83,21 @@ func set_score(value: int) -> void:
 	score = value
 	emit_signal("score_updated")
 
+
+func save_store():
+	var file = File.new()
+	file.open(save_store_path,file.WRITE_READ)
+	file.store_var(store)
+	file.close()
+
+func load_store():
+	var file = File.new()
+	if not file.file_exists(save_store_path):
+		return false
+	file.open(save_store_path,file.READ)
+	store = file.get_var()
+	file.close()
+	return true
 
 
 
