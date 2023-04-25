@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Assets/Fonts/Monocraft.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Sprites/ball.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://User Interfaces/Ball Skins.gd" type="Script" id=6]
 [ext_resource path="res://Assets/Sprites/glowingBall.png" type="Texture" id=7]
 [ext_resource path="res://User Interfaces/Label.gd" type="Script" id=8]
+[ext_resource path="res://Assets/Music/ShopTheme.mp3" type="AudioStream" id=9]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
@@ -49,6 +50,11 @@ font_data = ExtResource( 1 )
 [sub_resource type="DynamicFont" id=5]
 size = 55
 outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=8]
+outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
@@ -95,7 +101,7 @@ margin_right = 222.0
 margin_bottom = 372.0
 
 [node name="DefaultBall" type="Sprite" parent="TabContainer/Ball Skins/RichTextLabel/Control/Panel1"]
-position = Vector2( 112, 136 )
+position = Vector2( 104, 136 )
 texture = ExtResource( 2 )
 
 [node name="Button" type="Button" parent="TabContainer/Ball Skins/RichTextLabel/Control/Panel1"]
@@ -132,12 +138,15 @@ text = "Buy"
 
 [node name="Label" type="Label" parent="TabContainer/Ball Skins/RichTextLabel/Control/Panel4"]
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
+anchor_bottom = 0.5
 margin_left = -20.0
-margin_top = 41.0
+margin_top = -139.0
 margin_right = 20.0
-margin_bottom = 55.0
-text = "Price:"
+margin_bottom = -125.0
+text = "300"
+align = 1
 script = ExtResource( 8 )
 price = 300
 
@@ -148,7 +157,7 @@ margin_right = 734.0
 margin_bottom = 372.0
 
 [node name="CamoBall" type="Sprite" parent="TabContainer/Ball Skins/RichTextLabel/Control/Panel3"]
-position = Vector2( 112, 136 )
+position = Vector2( 109, 136 )
 texture = ExtResource( 4 )
 
 [node name="Button" type="Button" parent="TabContainer/Ball Skins/RichTextLabel/Control/Panel3"]
@@ -164,12 +173,15 @@ text = "Buy"
 
 [node name="Label" type="Label" parent="TabContainer/Ball Skins/RichTextLabel/Control/Panel3"]
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
+anchor_bottom = 0.5
 margin_left = -20.0
-margin_top = 41.0
+margin_top = -139.0
 margin_right = 20.0
-margin_bottom = 55.0
-text = "Price"
+margin_bottom = -125.0
+text = "300"
+align = 1
 script = ExtResource( 8 )
 price = 200
 
@@ -180,7 +192,7 @@ margin_right = 478.0
 margin_bottom = 372.0
 
 [node name="RedBall" type="Sprite" parent="TabContainer/Ball Skins/RichTextLabel/Control/Panel2"]
-position = Vector2( 112, 136 )
+position = Vector2( 109, 136 )
 texture = ExtResource( 3 )
 
 [node name="Button" type="Button" parent="TabContainer/Ball Skins/RichTextLabel/Control/Panel2"]
@@ -196,12 +208,15 @@ text = "Buy"
 
 [node name="Label" type="Label" parent="TabContainer/Ball Skins/RichTextLabel/Control/Panel2"]
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
+anchor_bottom = 0.5
 margin_left = -20.0
-margin_top = 41.0
+margin_top = -139.0
 margin_right = 20.0
-margin_bottom = 55.0
-text = "Price"
+margin_bottom = -125.0
+text = "300"
+align = 1
 script = ExtResource( 8 )
 price = 100
 
@@ -269,8 +284,12 @@ custom_fonts/font = SubResource( 5 )
 text = "Store"
 
 [node name="Points" type="Label" parent="."]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 56.0
+margin_bottom = 30.0
+custom_fonts/font = SubResource( 8 )
+text = "Sample"
 
 [node name="BackButton" type="Button" parent="."]
 anchor_left = 1.0
@@ -280,6 +299,11 @@ margin_top = 33.0
 margin_right = -48.0
 margin_bottom = 80.0
 text = "Return"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -20.0
+autoplay = true
 
 [connection signal="pressed" from="TabContainer/Ball Skins/RichTextLabel/Control/Panel1/Button" to="TabContainer/Ball Skins" method="_on_DefaultButton_pressed"]
 [connection signal="pressed" from="TabContainer/Ball Skins/RichTextLabel/Control/Panel4/Button" to="TabContainer/Ball Skins" method="_on_Button4Buy_pressed"]
