@@ -1,54 +1,54 @@
 extends KinematicBody2D
 
-const BALL_SPEED = 500
+const BALL_SPEED = 25
 
 var ball_vel = Vector2(BALL_SPEED, 0)
 var prev_ball_vel = ball_vel
-var start_pos
+var start_pos 
 var is_paused = false
-var pause_time = 20.0
+var pause_time = 2.0
 var pause_timer = 0.0
 
 onready var tween = $Tween
 puppet var puppet_position = Vector2(0,0) setget puppet_position_set
+puppet var puppet_velocity = Vector2()
+
 
 
 func _ready():
 	start_pos = position
-	# Makes it go in a random direction
-	# ball_vel = Vector2(rand_range(-1,1),rand_range(-1,1)).normalized() * BALL_SPEED
-	ball_vel = Vector2(BALL_SPEED, 0)
+	randomize()
+	ball_vel = Vector2(rand_range(-1,1),rand_range(-1,1)).normalized() * BALL_SPEED
+	pause_ball()
+	#ball_vel = Vector2(0,BALL_SPEED)
+
+func pause_ball():
+	position = start_pos
+	prev_ball_vel = ball_vel
+	ball_vel = Vector2.ZERO
+	is_paused = true
 
 
 func _process(delta):
-	
-	if is_paused:
-		# print("is paused")
-		
-		# Increase the pause timer, if after a given amount of time, move the ball
-		pause_timer = pause_timer + delta
-		# print(pause_timer)
-		if pause_timer >= pause_time:
-			is_paused = false
-			pause_timer = 0.0
-			ball_vel = prev_ball_vel
-		
-	# Ball is off screen
-	if position.y > get_viewport_rect().size.y or position.x > get_viewport_rect().size.x or position.x < 0:
-		Global.lose_life()
-		
-		if Global.lives <= 0:
-			end_game()
-			queue_free()
-		else:
-			position = start_pos
-			prev_ball_vel = ball_vel
-			ball_vel = Vector2.ZERO
-			is_paused = true
-		
-	if not is_paused:
-		# print("not paused")
-		ball_vel = ball_vel.normalized() * BALL_SPEED
+	if Global.startM == 0:
+		pass
+	else:
+		if is_paused:
+			# Increase the pause timer, if after a given amount of time, move the ball
+			pause_timer = pause_timer + delta
+			if pause_timer >= pause_time:
+				is_paused = false
+				pause_timer = 0.0
+				ball_vel = prev_ball_vel
+		else: 
+			ball_vel = ball_vel.normalized() * BALL_SPEED
+			
+		# Ball is off screen
+		if position.x > get_viewport_rect().size.x or position.x < 0 or position.y > get_viewport_rect().size.y:
+			MultiplayerSetUp._server_disconnected()
+			
+		if not tween.is_active():
+			move_and_slide(puppet_velocity * BALL_SPEED)
 		
 
 func end_game():
@@ -75,5 +75,7 @@ func puppet_position_set(new_value) -> void:
 	
 
 func _on_Network_tick_rate_timeout():
-	if is_network_master():
-		rset_unreliable("puppet_position", global_position)
+	if get_tree().has_network_peer():
+		if is_network_master():
+			rset_unreliable("puppet_position", global_position)
+			rset_unreliable("puppet_velocity", ball_vel)

@@ -7,6 +7,8 @@ var hud # Pointer to the HUD
 var num_bricks = 0
 var bricks = []
 signal level_loaded
+var startM = 0
+var typeM = 0
 
 func _ready():
 	connect("start_game",self,"load_level")

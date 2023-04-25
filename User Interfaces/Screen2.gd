@@ -19,11 +19,10 @@ func _ready():
 func _on_SingleButton_pressed():
 	Global.lives = Global.max_lives
 	get_tree().change_scene("res://Levels/Level1.tscn")
-	emit_signal("start_game")
 
 
 func _on_MultiButton_pressed():
-	get_tree().change_scene("res://User Interfaces/ConnectionSetUp.tscn")
+	get_tree().change_scene("res://User Interfaces/screen3.tscn")
 
 
 func _on_BackButton_pressed():
