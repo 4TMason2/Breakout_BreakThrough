@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const BALL_SPEED = 300
+const BALL_SPEED = 25
 
 var ball_vel = Vector2(BALL_SPEED, 0)
 var prev_ball_vel = ball_vel
