@@ -48,7 +48,6 @@ func _on_JoinButton_pressed():
 func _on_CreateButton_pressed():
 	if alreadyPressed == 0:
 		MultiplayerSetUp.ip_address = server_ip_address
-		print(MultiplayerSetUp.ip_address)
 		alreadyPressed = 1
 		MultiplayerSetUp.master = 1
 		MultiplayerSetUp.create_server()
@@ -71,6 +70,7 @@ func _on_Start_pressed():
 
 sync func switch_to_game() -> void:
 	Global.startM = 1
+	MultiplayerSetUp.instance_brick()
 	if Global.typeM == 0:
 		get_tree().change_scene("res://Levels/Multi1.tscn")
 	else:

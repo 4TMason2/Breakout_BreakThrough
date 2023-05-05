@@ -9,7 +9,7 @@ var num_bricks = 0
 var bricks = []
 var score = 0 setget set_score
 var startM = 0
-var typeM = 0
+var typeM = -1 # 0 = original (coop), 1 = comp
 var points = 0
 # Dictionary 
 var store = {
@@ -37,7 +37,6 @@ func count_bricks():
 	for brick in get_tree().get_nodes_in_group("spec_Bricks"):
 		bricks.append(brick)
 		num_bricks += 1	
-	print(num_bricks," counted")
 
 
 
@@ -45,7 +44,6 @@ func load_level(level_num):
 	var level_path = "res://Levels/Level" + str(level_num) + ".tscn"
 	Global.lives = Global.max_lives
 
-	print("Loading level: ", level_path)
 	
 	for node in get_tree().get_nodes_in_group("Powerups"):
 		node.queue_free()

@@ -11,12 +11,12 @@ var slider_vel = Vector2(0,0)
 func _physics_process(_delta):
 	if get_tree().has_network_peer():
 		if is_network_master():
-			if Input.is_action_pressed("left"):
-				slider_vel.x = -SLIDER_SPEED
 			if Input.is_action_pressed("right"):
 				slider_vel.x = SLIDER_SPEED
+			if Input.is_action_pressed("left"):
+				slider_vel.x = -SLIDER_SPEED
 			move_and_slide(slider_vel)
-			slider_vel.x -= slider_vel.y*0.5
+			slider_vel.x -= slider_vel.x*0.5
 	
 
 func puppet_position_set(new_value) -> void:

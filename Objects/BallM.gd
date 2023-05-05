@@ -14,7 +14,6 @@ puppet var puppet_position = Vector2(0,0) setget puppet_position_set
 puppet var puppet_velocity = Vector2()
 
 
-
 func _ready():
 	start_pos = position
 	randomize()
@@ -53,6 +52,7 @@ func _process(delta):
 
 func end_game():
 	print("game over")
+	
 
 func _physics_process(delta):
 	var collision_info = move_and_collide(ball_vel*delta)
@@ -65,6 +65,12 @@ func _physics_process(delta):
 			ball_vel = ball_vel.bounce(collision_info.get_normal())
 			if collider.get_parent().is_in_group("Bricks"):
 				collider.get_parent().hit()
+				print(collider.get_parent())
+				#rset_id(get_tree().get_network_unique_id(), "numHits", collider.get_parent().numHits -1)
+				#brick = collider.get_parent()
+
+
+#var brick = null
 
 
 func puppet_position_set(new_value) -> void:

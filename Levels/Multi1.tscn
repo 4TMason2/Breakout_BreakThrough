@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
+[ext_resource path="res://Objects/3hitBrickM.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Music/EasyBreakout.mp3" type="AudioStream" id=3]
 [ext_resource path="res://Objects/2HitBrick.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Objects/3hitBrick.tscn" type="PackedScene" id=5]
@@ -66,121 +67,124 @@ position = Vector2( 768, 0 )
 position = Vector2( 896, 0 )
 
 [node name="Brick" parent="." instance=ExtResource( 7 )]
-position = Vector2( 480, 108 )
+position = Vector2( 480, 704.014 )
 rotation = 1.57236
 
 [node name="Brick2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 544, 108 )
+position = Vector2( 544, 704.014 )
 rotation = 1.57236
 
 [node name="Brick5" parent="." instance=ExtResource( 7 )]
-position = Vector2( 576, 236 )
+position = Vector2( 576, 832.014 )
 rotation = 1.57236
 
 [node name="Brick6" parent="." instance=ExtResource( 7 )]
-position = Vector2( 448, 236 )
+position = Vector2( 448, 832.014 )
 rotation = 1.57236
 
 [node name="Brick7" parent="." instance=ExtResource( 7 )]
-position = Vector2( 576, 364 )
+position = Vector2( 576, 960.014 )
 rotation = 1.57236
 
 [node name="Brick9" parent="." instance=ExtResource( 7 )]
-position = Vector2( 608, 300 )
+position = Vector2( 608, 896.014 )
 rotation = 1.57236
 
 [node name="Brick10" parent="." instance=ExtResource( 7 )]
-position = Vector2( 416, 300 )
+position = Vector2( 416, 896.014 )
 rotation = 1.57236
 
 [node name="Brick8" parent="." instance=ExtResource( 7 )]
-position = Vector2( 448, 364 )
+position = Vector2( 448, 960.014 )
 rotation = 1.57236
 
 [node name="Brick3" parent="." instance=ExtResource( 7 )]
-position = Vector2( 544, 492 )
+position = Vector2( 544, 1088.01 )
 rotation = 1.57236
 
 [node name="Brick4" parent="." instance=ExtResource( 7 )]
-position = Vector2( 480, 492 )
+position = Vector2( 480, 1088.01 )
 rotation = 1.57236
 
 [node name="2HitBrick" parent="." instance=ExtResource( 4 )]
-position = Vector2( 512, 524 )
+position = Vector2( 512, 1120.01 )
 rotation = 1.57167
 
 [node name="2HitBrick2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 512, 76 )
+position = Vector2( 512, 672.014 )
 rotation = 1.57167
 
 [node name="2HitBrick7" parent="." instance=ExtResource( 4 )]
-position = Vector2( 576, 300 )
+position = Vector2( 576, 896.014 )
 rotation = 1.57167
 
 [node name="2HitBrick8" parent="." instance=ExtResource( 4 )]
-position = Vector2( 448, 300 )
+position = Vector2( 448, 896.014 )
 rotation = 1.57167
 
 [node name="2HitBrick3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 544, 172 )
+position = Vector2( 544, 768.014 )
 rotation = 1.57167
 
 [node name="2HitBrick4" parent="." instance=ExtResource( 4 )]
-position = Vector2( 480, 172 )
+position = Vector2( 480, 768.014 )
 rotation = 1.57167
 
 [node name="2HitBrick5" parent="." instance=ExtResource( 4 )]
-position = Vector2( 480, 428 )
+position = Vector2( 480, 1024.01 )
 rotation = 1.57167
 
 [node name="2HitBrick6" parent="." instance=ExtResource( 4 )]
-position = Vector2( 544, 428 )
+position = Vector2( 544, 1024.01 )
 rotation = 1.57167
 
 [node name="Sprite" parent="." instance=ExtResource( 5 )]
-position = Vector2( 512, 268 )
+position = Vector2( 512, 864.014 )
 rotation = 1.56711
 
 [node name="Sprite2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 512, 204 )
+position = Vector2( 512, 800.014 )
 rotation = -4.70718
 
 [node name="Sprite7" parent="." instance=ExtResource( 5 )]
-position = Vector2( 544, 300 )
+position = Vector2( 544, 896.014 )
 rotation = 1.56675
 
 [node name="Sprite10" parent="." instance=ExtResource( 5 )]
-position = Vector2( 480, 300 )
+position = Vector2( 480, 896.014 )
 rotation = -4.71464
 
 [node name="Sprite12" parent="." instance=ExtResource( 5 )]
-position = Vector2( 480, 364 )
+position = Vector2( 480, 960.014 )
 rotation = -4.71262
 
 [node name="Sprite11" parent="." instance=ExtResource( 5 )]
-position = Vector2( 480, 236 )
+position = Vector2( 480, 832.014 )
 rotation = 1.5699
 
 [node name="Sprite8" parent="." instance=ExtResource( 5 )]
-position = Vector2( 544, 236 )
+position = Vector2( 544, 832.014 )
 rotation = 1.56573
 
 [node name="Sprite9" parent="." instance=ExtResource( 5 )]
-position = Vector2( 544, 364 )
+position = Vector2( 544, 960.014 )
 rotation = 1.56943
 
 [node name="Sprite3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 512, 140 )
+position = Vector2( 512, 736.014 )
 rotation = -4.7118
 
 [node name="Sprite4" parent="." instance=ExtResource( 5 )]
-position = Vector2( 512, 332 )
+position = Vector2( 512, 928.014 )
 rotation = -4.71455
 
 [node name="Sprite5" parent="." instance=ExtResource( 5 )]
-position = Vector2( 512, 396 )
+position = Vector2( 512, 992.014 )
 rotation = 1.56639
 
 [node name="Sprite6" parent="." instance=ExtResource( 5 )]
-position = Vector2( 512, 460 )
+position = Vector2( 512, 1056.01 )
 rotation = -4.71471
+
+[node name="Sprite13" parent="." instance=ExtResource( 1 )]
+position = Vector2( 335, 1031.01 )
