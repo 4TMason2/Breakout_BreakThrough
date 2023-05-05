@@ -3,6 +3,7 @@ extends Node
 const PORT = 28960
 
 var ip_address = "127.0.0.1"
+var username = ""
 var server = null
 var client = null
 var master = 0
@@ -24,6 +25,7 @@ func create_server() -> void:
 	server = NetworkedMultiplayerENet.new()
 	server.create_server(PORT, 2)
 	get_tree().set_network_peer(server)
+	Global.instance_node(load("res://Server_advertiser.tscn"), get_tree().current_scene)
 	
 	
 func connect_server() -> void:

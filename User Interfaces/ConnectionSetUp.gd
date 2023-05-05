@@ -1,12 +1,9 @@
 extends Control
 
 
-var server_ip_address = ''
-var alreadyPressed = 0
-
 onready var multiplayer_config_ui = $VBoxContainer
-onready var device_ip_address = $CanvasLayer/Device_IP
-onready var start_game = $CanvasLayer/Start
+onready var username_text_edit = $VBoxContainer/Username_text_edit
+onready var start_game = $CanvasLayer/Start 
 
 func _ready() -> void:
 	get_tree().connect('network_peer_connected', self, '_player_connected')
@@ -39,16 +36,15 @@ func _player_disconnected(id) -> void:
 
 
 func _on_JoinButton_pressed():
-	if alreadyPressed == 0:
-		alreadyPressed = 1
-		if server_ip_address != '':
-			MultiplayerSetUp.ip_address = server_ip_address
-		MultiplayerSetUp.connect_server()
+	if username_text_edit.text != "": 
+		multiplayer_config_ui.hide()
+		username_text_edit.hide() 
+		Global.instance_node(load("res://User Interfaces/Server_browser.tscn"), self)
+
 
 func _on_CreateButton_pressed():
-	if alreadyPressed == 0:
-		MultiplayerSetUp.ip_address = server_ip_address
-		alreadyPressed = 1
+	if username_text_edit.text != "":
+		MultiplayerSetUp.username = username_text_edit.text
 		MultiplayerSetUp.master = 1
 		MultiplayerSetUp.create_server()
 		MultiplayerSetUp.instance_player(get_tree().get_network_unique_id())
@@ -57,11 +53,6 @@ func _on_CreateButton_pressed():
 func _connected_to_server() -> void:
 	yield(get_tree().create_timer(0.1), "timeout")
 	MultiplayerSetUp.instance_player(get_tree().get_network_unique_id())
-
-
-
-func _on_Server_IP_text_entered(new_text):
-	server_ip_address = new_text
 
 
 func _on_Start_pressed():
@@ -77,8 +68,7 @@ sync func switch_to_game() -> void:
 		get_tree().change_scene("res://Levels/Multi2.tscn")
 
 func _on_BackButton_pressed():
-	if alreadyPressed == 1:
-		MultiplayerSetUp.server.close_connection()
-		MultiplayerSetUp._server_disconnected()
-	alreadyPressed = 0
+	MultiplayerSetUp.server.close_connection()
+	MultiplayerSetUp._server_disconnected()
 	get_tree().change_scene("res://User Interfaces/Screen2.tscn")
+ 
