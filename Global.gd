@@ -2,7 +2,7 @@ extends Node
 
 var max_lives = 3
 var current_level = 1
-var final_level = 5 #   Isn't it 4?
+var final_level = 5
 var lives = max_lives
 var hud # Pointer to the HUD
 var num_bricks = 0
@@ -59,6 +59,8 @@ func brick_break():
 	#print(num_bricks)
 	if num_bricks == 0:
 		current_level += 1
+		
+		# Go to win screen if on last level
 		if current_level == final_level:
 			win_game()
 		else:
@@ -70,7 +72,7 @@ func win_game():
 
 func lose_life():
 	lives -= 1
-	if score > 0:
+	if score >= 0:
 		set_score(score - 10)
 	hud.load_hearts()
 	if lives <= 0:
@@ -83,9 +85,10 @@ func add_life():
 
 func reset():
 	current_level = 1
-	points = points + score
+	points = points + (score / 5)
 	score = 0
 	lives = max_lives
+	save_store()
 
 func set_score(value: int) -> void:
 	score = value
@@ -104,9 +107,11 @@ func instance_node(node: Object, parent: Object) -> Object:
 	return node_instance
 
 
+
 func save_store():
 	var file = File.new()
 	file.open(save_store_path,file.WRITE_READ)
+	file.store_var(points)
 	file.store_var(store)
 	file.close()
 
@@ -115,6 +120,7 @@ func load_store():
 	if not file.file_exists(save_store_path):
 		return false
 	file.open(save_store_path,file.READ)
+	points = file.get_var()
 	store = file.get_var()
 	file.close()
 	return true
