@@ -25,8 +25,8 @@ func _ready():
 	ball_normal =  load(textures[Global.store.selected])
 	start_pos = position
 	# Makes it go in a random direction
-	randomize()
-	ball_vel = Vector2(rand_range(-1,1),rand_range(-1,1)).normalized() * BALL_SPEED
+	rand_seed(OS.get_ticks_msec())
+	ball_vel = Vector2(rand_range(-1,1), rand_range(0.5, 1)).normalized() * BALL_SPEED
 	pause_ball()
 	#ball_vel = Vector2(0,BALL_SPEED)
 

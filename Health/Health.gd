@@ -16,6 +16,8 @@ func set_max(new_max):
 	
 func decrease():
 	current -= 1
+	if current == 0:
+		get_tree().change_scene("res://User Interfaces/WinScreen.tscn")
 	emit_signal("changed", current)
 	
 func _initialize():

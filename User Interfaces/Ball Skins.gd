@@ -9,7 +9,7 @@ onready var panels = $RichTextLabel/Control
 func _ready():
 	# Saves the bought item for the player
 	Global.load_store()
-	for item in range(panels.get_child_count() - 2):
+	for item in range(panels.get_child_count()):
 		if Global.store.bought[item] == true:
 			panels.get_node('Panel' + str(item + 1)).get_node('Button').text = 'Select'
 	panels.get_node('Panel' + str(Global.store.selected + 1)).get_node('Button').text = 'Selected'
