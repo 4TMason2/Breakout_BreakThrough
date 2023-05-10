@@ -48,7 +48,7 @@ func _on_CreateButton_pressed():
 		MultiplayerSetUp.master = 1
 		MultiplayerSetUp.create_server()
 		MultiplayerSetUp.instance_player(get_tree().get_network_unique_id())
-	
+
 
 func _connected_to_server() -> void:
 	yield(get_tree().create_timer(0.1), "timeout")

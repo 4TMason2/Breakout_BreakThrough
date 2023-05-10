@@ -20,4 +20,4 @@ margin_right = -7.0
 margin_bottom = 6.0
 text = "Join"
 
-[connection signal="pressed" from="Join_button" to="Join_button" method="_on_Join_button_pressed"]
+[connection signal="pressed" from="Join_button" to="." method="_on_Join_button_pressed"]

@@ -65,7 +65,6 @@ func _physics_process(delta):
 			ball_vel = ball_vel.bounce(collision_info.get_normal())
 			if collider.get_parent().is_in_group("Bricks"):
 				collider.get_parent().hit()
-				print(collider.get_parent())
 				#rset_id(get_tree().get_network_unique_id(), "numHits", collider.get_parent().numHits -1)
 				#brick = collider.get_parent()
 
