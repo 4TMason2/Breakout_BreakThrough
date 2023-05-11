@@ -1,7 +1,19 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://User Interfaces/Screen2.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/arcadeBackground.png" type="Texture" id=2]
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://Assets/Fonts/Monocraft.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+font_data = SubResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = SubResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = SubResource( 2 )
 
 [node name="Screen2" type="Control"]
 anchor_right = 1.0
@@ -25,21 +37,24 @@ margin_bottom = 29.5
 
 [node name="SingleButton" type="Button" parent="VBoxContainer"]
 margin_right = 267.0
-margin_bottom = 20.0
+margin_bottom = 23.0
 focus_neighbour_top = NodePath("../BackButton")
+custom_fonts/font = SubResource( 3 )
 text = "Singleplayer"
 
 [node name="MultiButton" type="Button" parent="VBoxContainer"]
-margin_top = 24.0
+margin_top = 27.0
 margin_right = 267.0
-margin_bottom = 44.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 4 )
 text = "Multiplayer"
 
 [node name="BackButton" type="Button" parent="VBoxContainer"]
-margin_top = 48.0
+margin_top = 54.0
 margin_right = 267.0
-margin_bottom = 68.0
+margin_bottom = 77.0
 focus_neighbour_bottom = NodePath("../SingleButton")
+custom_fonts/font = SubResource( 5 )
 text = "Back"
 
 [connection signal="pressed" from="VBoxContainer/SingleButton" to="." method="_on_SingleButton_pressed"]
