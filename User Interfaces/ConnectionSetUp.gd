@@ -36,15 +36,16 @@ func _player_disconnected(id) -> void:
 
 
 func _on_JoinButton_pressed():
-	#if username_text_edit.text != "": 
+	if username_text_edit.text != "": 
 		multiplayer_config_ui.hide()
 		username_text_edit.hide() 
-		#Global.instance_node(load("res://User Interfaces/Server_browser.tscn"), self)
-		MultiplayerSetUp.connect_server()
+		#MultiplayerSetUp.ip_address = username_text_edit.text
+		Global.instance_node(load("res://User Interfaces/Server_browser.tscn"), self)
+		#MultiplayerSetUp.connect_server()
 
 
 func _on_CreateButton_pressed():
-	#if username_text_edit.text != "":
+	if username_text_edit.text != "":
 		MultiplayerSetUp.username = username_text_edit.text
 		MultiplayerSetUp.master = 1
 		MultiplayerSetUp.create_server()

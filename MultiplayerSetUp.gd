@@ -25,7 +25,7 @@ func create_server() -> void:
 	server = NetworkedMultiplayerENet.new()
 	server.create_server(PORT, 2)
 	get_tree().set_network_peer(server)
-	#Global.instance_node(load("res://Server_advertiser.tscn"), get_tree().current_scene)
+	Global.instance_node(load("res://Server_advertiser.tscn"), get_tree().current_scene)
 	
 	
 func connect_server() -> void:
@@ -36,11 +36,9 @@ func connect_server() -> void:
 func instance_player(id) -> void:
 	var slider = null
 	if Global.typeM == 0:
-		slider = load("res://Objects/Slider1M.tscn")
 		
 		#var ball = load("res://Objects/BallM.tscn")
-		
-		print(str(master) + " player")
+		slider = load("res://Objects/Slider1M.tscn")
 		if master == 1:
 			player_instance = Global.instance_node_at_location(slider, Players, Vector2(24, 300))
 		else:
@@ -53,7 +51,7 @@ func instance_player(id) -> void:
 			player_instance = Global.instance_node_at_location(slider, Players, Vector2(768, 496))
 	player_instance.name = str(id)
 	player_instance.set_network_master(id)
-	instance_ball(id)
+	#instance_ball(id)
 
 
 func instance_ball(id) -> void:

@@ -9,6 +9,7 @@ anchor_bottom = 1.0
 script = ExtResource( 2 )
 
 [node name="ArcadeBackground" type="Sprite" parent="."]
+visible = false
 position = Vector2( 512, 304 )
 scale = Vector2( 1.50588, 0.60475 )
 texture = ExtResource( 1 )
@@ -24,28 +25,28 @@ margin_right = 88.5
 margin_bottom = 9.5
 
 [node name="Username_text_edit" type="LineEdit" parent="VBoxContainer"]
-visible = false
 margin_right = 267.0
 margin_bottom = 24.0
 align = 1
 placeholder_text = "Enter Username"
 
 [node name="JoinButton" type="Button" parent="VBoxContainer"]
+margin_top = 28.0
 margin_right = 267.0
-margin_bottom = 20.0
+margin_bottom = 48.0
 focus_neighbour_top = NodePath("../BackButton")
 text = "Join"
 
 [node name="CreateButton" type="Button" parent="VBoxContainer"]
-margin_top = 24.0
+margin_top = 52.0
 margin_right = 267.0
-margin_bottom = 44.0
+margin_bottom = 72.0
 text = "Create"
 
 [node name="BackButton" type="Button" parent="VBoxContainer"]
-margin_top = 48.0
+margin_top = 76.0
 margin_right = 267.0
-margin_bottom = 68.0
+margin_bottom = 96.0
 focus_neighbour_bottom = NodePath("../JoinButton")
 text = "Back"
 
