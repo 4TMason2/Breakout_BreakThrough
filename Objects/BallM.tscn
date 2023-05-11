@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 13.1529
 
-[node name="BallM" type="KinematicBody2D" groups=["Net", "Respawnable"]]
+[node name="BallM" type="KinematicBody2D" groups=["Net"]]
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true

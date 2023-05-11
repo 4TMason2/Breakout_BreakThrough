@@ -9,7 +9,6 @@ anchor_bottom = 1.0
 script = ExtResource( 2 )
 
 [node name="ArcadeBackground" type="Sprite" parent="."]
-visible = false
 position = Vector2( 512, 304 )
 scale = Vector2( 1.50588, 0.60475 )
 texture = ExtResource( 1 )
@@ -19,34 +18,34 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -133.5
-margin_top = -75.5
-margin_right = 133.5
-margin_bottom = 75.5
+margin_left = -178.5
+margin_top = -141.5
+margin_right = 88.5
+margin_bottom = 9.5
 
 [node name="Username_text_edit" type="LineEdit" parent="VBoxContainer"]
+visible = false
 margin_right = 267.0
 margin_bottom = 24.0
 align = 1
 placeholder_text = "Enter Username"
 
 [node name="JoinButton" type="Button" parent="VBoxContainer"]
-margin_top = 28.0
 margin_right = 267.0
-margin_bottom = 48.0
+margin_bottom = 20.0
 focus_neighbour_top = NodePath("../BackButton")
 text = "Join"
 
 [node name="CreateButton" type="Button" parent="VBoxContainer"]
-margin_top = 52.0
+margin_top = 24.0
 margin_right = 267.0
-margin_bottom = 72.0
+margin_bottom = 44.0
 text = "Create"
 
 [node name="BackButton" type="Button" parent="VBoxContainer"]
-margin_top = 76.0
+margin_top = 48.0
 margin_right = 267.0
-margin_bottom = 96.0
+margin_bottom = 68.0
 focus_neighbour_bottom = NodePath("../JoinButton")
 text = "Back"
 
@@ -57,20 +56,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -68.0
-margin_top = -143.0
-margin_right = 68.0
-margin_bottom = -129.0
+margin_left = -113.0
+margin_top = -209.0
+margin_right = 23.0
+margin_bottom = -195.0
 
 [node name="Start" type="Button" parent="CanvasLayer"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -54.0
-margin_top = 14.0
-margin_right = 54.0
-margin_bottom = 46.0
+margin_left = -99.0
+margin_top = 2.0
+margin_right = 9.0
+margin_bottom = 34.0
 rect_rotation = 0.296812
 text = "Start Game"
 

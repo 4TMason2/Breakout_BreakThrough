@@ -36,14 +36,15 @@ func _player_disconnected(id) -> void:
 
 
 func _on_JoinButton_pressed():
-	if username_text_edit.text != "": 
+	#if username_text_edit.text != "": 
 		multiplayer_config_ui.hide()
 		username_text_edit.hide() 
-		Global.instance_node(load("res://User Interfaces/Server_browser.tscn"), self)
+		#Global.instance_node(load("res://User Interfaces/Server_browser.tscn"), self)
+		MultiplayerSetUp.connect_server()
 
 
 func _on_CreateButton_pressed():
-	if username_text_edit.text != "":
+	#if username_text_edit.text != "":
 		MultiplayerSetUp.username = username_text_edit.text
 		MultiplayerSetUp.master = 1
 		MultiplayerSetUp.create_server()
@@ -61,14 +62,15 @@ func _on_Start_pressed():
 
 sync func switch_to_game() -> void:
 	Global.startM = 1
-	MultiplayerSetUp.instance_brick()
 	if Global.typeM == 0:
 		get_tree().change_scene("res://Levels/Multi1.tscn")
 	else:
 		get_tree().change_scene("res://Levels/Multi2.tscn")
 
 func _on_BackButton_pressed():
-	MultiplayerSetUp.server.close_connection()
-	MultiplayerSetUp._server_disconnected()
+	if get_tree().has_network_peer():
+		if is_network_master():
+			MultiplayerSetUp.server.close_connection()
+			MultiplayerSetUp._server_disconnected()
 	get_tree().change_scene("res://User Interfaces/Screen2.tscn")
  

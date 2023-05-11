@@ -8,6 +8,7 @@ puppet var puppet_position = Vector2(0,0) setget puppet_position_set
 
 var slider_vel = Vector2(0,0)
 
+
 func _physics_process(_delta):
 	if get_tree().has_network_peer():
 		if is_network_master():
