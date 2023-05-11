@@ -39,7 +39,7 @@ func _on_JoinButton_pressed():
 	if username_text_edit.text != "": 
 		multiplayer_config_ui.hide()
 		username_text_edit.hide() 
-		#MultiplayerSetUp.ip_address = username_text_edit.text
+		MultiplayerSetUp.ip_address = username_text_edit.text
 		Global.instance_node(load("res://User Interfaces/Server_browser.tscn"), self)
 		#MultiplayerSetUp.connect_server()
 

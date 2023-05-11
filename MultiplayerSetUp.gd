@@ -46,12 +46,12 @@ func instance_player(id) -> void:
 	else:
 		slider = load("res://Objects/Slider2M.tscn")
 		if master == 1:
-			player_instance = Global.instance_node_at_location(slider, Players, Vector2(256, 450))
+			player_instance = Global.instance_node_at_location(slider, Players, Vector2(256, 496))
 		else:
 			player_instance = Global.instance_node_at_location(slider, Players, Vector2(768, 496))
 	player_instance.name = str(id)
 	player_instance.set_network_master(id)
-	#instance_ball(id)
+	instance_ball(id)
 
 
 func instance_ball(id) -> void:
