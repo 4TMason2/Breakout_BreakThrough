@@ -2,7 +2,7 @@ extends Node
 
 const PORT = 28960
 
-var ip_address = "127.0.0.1"
+var ip_address = "25.2.125.91"
 var username = ""
 var server = null
 var client = null
@@ -51,7 +51,7 @@ func instance_player(id) -> void:
 			player_instance = Global.instance_node_at_location(slider, Players, Vector2(768, 496))
 	player_instance.name = str(id)
 	player_instance.set_network_master(id)
-	instance_ball(id)
+	#instance_ball(id)
 
 
 func instance_ball(id) -> void:
@@ -74,18 +74,18 @@ func instance_ball(id) -> void:
 func reset_network_connection():
 	if get_tree().has_network_peer():
 		get_tree().network_peer = null
-	get_tree().change_scene("res://User Interfaces/GameOver.tscn")
+	#get_tree().change_scene("res://User Interfaces/GameOver.tscn")
 
 func _connected_to_server() -> void:
 	print("Successfully connected to the server")
 	
 func _server_disconnected() -> void:
 	print("Disconnected to the server")
-	Global.typeM = -1
-	for child in Players.get_children():
-		if child.is_in_group("Net"):
-			child.queue_free()
-	reset_network_connection()
+	#Global.typeM = -1
+	#for child in Players.get_children():
+	#	if child.is_in_group("Net"):
+	#		child.queue_free()
+	#reset_network_connection()
 
 
 
