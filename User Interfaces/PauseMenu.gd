@@ -22,5 +22,11 @@ func _on_QuitButton_pressed():
 
 func _on_MainMenuButton_pressed():
 	self.is_paused = false
+	if Global.typeM > -1:
+		Global.typeM = -1
+		for child in Players.get_children():
+			if child.is_in_group("Net"):
+				child.queue_free()
+		MultiplayerSetUp.reset_network_connection()
 	Global.reset()
 	get_tree().change_scene("res://User Interfaces/StartMenu.tscn")

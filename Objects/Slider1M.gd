@@ -10,7 +10,8 @@ onready var username_label = $UsernameLabel
 var slider_vel = Vector2(0,0)
 
 func _ready():
-	username_label.text = MultiplayerSetUp.username 
+	#username_label.text = MultiplayerSetUp.username 
+	pass
 
 func _physics_process(_delta):
 	if get_tree().has_network_peer():
