@@ -21,4 +21,3 @@ func _on_ShopButton_pressed():
 
 func _on_QuitButton_pressed():
 	get_tree().quit()
-	

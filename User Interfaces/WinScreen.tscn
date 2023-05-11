@@ -4,6 +4,7 @@
 [ext_resource path="res://User Interfaces/WinScreen.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Music/Winscreen.mp3" type="AudioStream" id=3]
 
+
 [sub_resource type="DynamicFont" id=1]
 size = 125
 outline_size = 6
