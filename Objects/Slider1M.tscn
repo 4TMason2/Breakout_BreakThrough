@@ -25,4 +25,10 @@ autostart = true
 
 [node name="Tween" type="Tween" parent="."]
 
+[node name="UsernameLabel" type="Label" parent="."]
+margin_left = -20.0
+margin_top = -96.0
+margin_right = 20.0
+margin_bottom = -82.0
+
 [connection signal="timeout" from="Network_tick_rate" to="." method="_on_Network_tick_rate_timeout"]

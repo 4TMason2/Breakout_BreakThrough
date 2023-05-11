@@ -5,9 +5,12 @@ const SLIDER_SPEED = 500
 
 onready var tween = $Tween
 puppet var puppet_position = Vector2(0,0) setget puppet_position_set
+onready var username_label = $UsernameLabel
 
 var slider_vel = Vector2(0,0)
 
+func _ready():
+	username_label.text = MultiplayerSetUp.username 
 
 func _physics_process(_delta):
 	if get_tree().has_network_peer():
